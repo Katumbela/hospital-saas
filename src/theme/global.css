@@ -9,7 +9,7 @@ body {
 }
 
 div {
-  overflow-y: hidden;
+  overflow: hidden;
 }
 ::-webkit-scrollbar {
   width: 12px; /* Largura da barra de rolagem */
