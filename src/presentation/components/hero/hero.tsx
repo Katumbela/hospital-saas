@@ -1,12 +1,13 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Button } from "../button/button";
-import { icons } from "../../../utils/image-exporter";
+import { bg, icons } from "../../../utils/image-exporter";
 
 export function Hero() {
   return (
     <div className="container ">
+        <img src={bg.bg_hero_fundo} className="absolute" alt="" />
       <div className="flex h-[600px]">
-        <div className="w-full my-auto grid items-center">
+        <div className="w-full  z-10 my-auto grid items-center">
           <div>
             <h1 className="text-8xl text-white font-bold ">HackyOff</h1>
             <p className="text-5xl font-bold mt-6  text-secondary">
@@ -23,7 +24,7 @@ export function Hero() {
             <div className="grid mb-5 grid-cols-3">
               <div className="flex  gap-1 text-white">
                 <img src={icons.notes} className="h-[3em] w-[3em]" alt="" />
-                <span className="text-4xl font-bold">+50</span>
+                <span className="text-4xl my-auto font-bold">+50</span>
                 <div>
                   <div className="flex gap-0 flex-col">
                     <span>Laboratórios</span> <span>Práticos</span>
@@ -32,7 +33,7 @@ export function Hero() {
               </div>
               <div className="flex  gap-1 text-white">
                 <img src={icons.user_tag} className="h-[3em] w-[3em]" alt="" />
-                <span className="text-4xl font-bold">+50</span>
+                <span className="text-4xl my-auto font-bold">+10</span>
                 <div>
                   <div className="flex gap-0 flex-col">
                     <span>Instrutores de</span> <span>Certificados</span>
@@ -41,7 +42,7 @@ export function Hero() {
               </div>
               <div className="flex  gap-1 text-white">
                 <img src={icons.taca} className="h-[3em] w-[3em]" alt="" />
-                <span className="text-4xl font-bold">+50</span>
+                <span className="text-4xl my-auto font-bold">24/7</span>
                 <div>
                   <div className="flex gap-0 flex-col">
                     <span>Suporte</span> <span>Especializado</span>
@@ -64,7 +65,9 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="w-full"></div>
+        <div className="w-full">
+            <img src={bg.bg_hero} alt="" />
+        </div>
       </div>
     </div>
   );
