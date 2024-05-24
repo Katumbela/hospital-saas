@@ -1,4 +1,6 @@
-import { icons } from "../../../utils/image-exporter";
+
+import { bg, icons } from "../../../utils/image-exporter";
+import { BsPlayCircle } from "react-icons/bs";
 
 export function AboutUs() {
   return (
@@ -66,7 +68,57 @@ export function AboutUs() {
               </li>
             </ul>
           </div>
-          <div className="w-5/12"></div>
+          <div className="w-5/12">
+            <div className="flex gap-4">
+              <div className="w-full">
+                <div className="border text-start p-3 rounded-md">
+                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-4">
+                    <img src={icons.pcb} className="w-[2em]" alt="" />
+                    <span className="my-auto">HackyOff {"_>"}</span>
+                  </p>
+                  <br />
+                  <b className="text-white">Nossos Objectivos </b>
+                  <ol className="text-white text-sm">
+                    <li className="my-2">
+                      1. Capacitar profissionais e entusiastas da segurança
+                      cibernética.
+                    </li>
+                    <li className="my-2">
+                      2. Cultivar uma comunidade engajada e colaborativa.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="border text-start p-3 rounded-md">
+                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-4">
+                    <img src={icons.pcb} className="w-[2em]" alt="" />
+                    <span className="my-auto">HackyOff {"_>"}</span>
+                  </p>
+                  <br />
+                  <b className="text-white">Nossos Objectivos </b>
+                  <ol className="text-white text-sm">
+                    <li className="my-2">
+                      1. Capacitar profissionais e entusiastas da segurança
+                      cibernética.
+                    </li>
+                    <li className="my-2">
+                      2. Cultivar uma comunidade engajada e colaborativa.
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div className="video relative">
+              <img src={bg.bg_video} className="w-full " alt="" />
+              <div className="play cursor-pointer items-center hover:text-secondary place-content-center z-10 h-[5rem] bg-primary w-[5rem] absolute top-[40%] left-[40%] rounded-full grid">
+                {" "}
+                <BsPlayCircle className="text-3xl" />
+              </div>
+              <div className="play items-center place-content-center hover:animate-none animate-ping h-[4rem] bg-primary w-[4rem] absolute top-[42%] left-[41.5%] rounded-full grid"></div>
+            </div>
+          </div>
         </div>
       </section>
     </>

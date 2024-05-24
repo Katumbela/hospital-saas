@@ -5,6 +5,7 @@ import taca from "../assets/icons/cup.png";
 import check_list from "../assets/icons/check-list.png";
 import pin_btn from "../assets/icons/pin-btn.png";
 import notes from "../assets/icons/note-2.png";
+import pcb from "../assets/icons/pcb.png";
 import user_tag from "../assets/icons/user-tag.png";
 import fb from "../assets/icons/facebook.png";
 import insta from "../assets/icons/insta.png";
@@ -49,6 +50,7 @@ export const logos = {
 export const icons = {
   taca,
   pin_btn,
+  pcb,
   check_list,
   fb,
   linkedin,
