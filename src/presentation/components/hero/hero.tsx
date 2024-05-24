@@ -71,9 +71,12 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="w-5/12">
-          <img src={bg.bg_hero} className="z-10" alt="" />
-        </div>
+
+        <img
+          src={bg.bg_hero}
+          className="-z-10 absolute bottom-0 h-[80%] -right-[5rem]  w-[60%] my-auto"
+          alt=""
+        />
       </div>
     </div>
   );
