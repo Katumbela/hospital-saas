@@ -1,0 +1,14 @@
+{
+  
+  "footer":  {
+    "title": "Newsletter",
+    "tel": "+244 9123 000 000",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro eum nisi quo similique, vel mollitia quisquam repellendus harum at eius excepturi consequuntur corrupti officiis repellat. Sapiente ipsam reprehenderit consequuntur maiores."
+    },
+  "newsletter": {
+    "title": "Subscribe to our Newsletter",
+    "email": "Type your email",
+    "btnText": "Subscribe",
+    "info": "Your email has been successfully added to our newsletter"
+  },
+}

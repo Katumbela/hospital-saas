@@ -1,0 +1,14 @@
+{
+   
+  "footer":  {
+    "title": "HackyOff ",
+    "tel": "+244 9123 000 000",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro eum nisi quo similique, vel mollitia quisquam repellendus harum at eius excepturi consequuntur corrupti officiis repellat. Sapiente ipsam reprehenderit consequuntur maiores."
+    }, 
+  "newsletter": {
+    "title": "Subscreva à nossa Newsletter",
+    "email": "Insira seu e-mail",
+    "btnText": "Subscrever",
+    "info": "Seu email foi adicionado com sucesso a nossa newsletter"
+  }
+}
