@@ -5,9 +5,13 @@ import { bg, icons } from "../../../utils/image-exporter";
 export function Hero() {
   return (
     <div className="container ">
-    <img src={bg.bg_hero_fundo} className="absolute opacity-[.5]" alt="" />
+      <img src={bg.bg_hero_fundo} className="absolute opacity-[.5]" alt="" />
       <img src={bg.bg_2} className="absolute" alt="" />
-      <img src={bg.bg_hero_fundo} className="absolute animate-pulse-slow" alt="" />
+      <img
+        src={bg.bg_hero_fundo}
+        className="absolute animate-pulse-slow"
+        alt=""
+      />
       <div className="flex h-[600px]">
         <div className="w-full  z-10 my-auto grid items-center">
           <div>

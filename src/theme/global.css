@@ -8,6 +8,9 @@ body {
   scroll-behavior: smooth;
 }
 
+div {
+  overflow-y: hidden;
+}
 ::-webkit-scrollbar {
   width: 12px; /* Largura da barra de rolagem */
 }

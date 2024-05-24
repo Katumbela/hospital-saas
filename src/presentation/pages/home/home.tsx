@@ -1,17 +1,18 @@
-import { HackerEffectText } from "@nekzus/react-hacker-effect";
-import { Hero, NavBar } from "../../components";
+import { AboutUs, Hero, NavBar } from "../../components";
+import { gifs } from "../../../utils/image-exporter";
 
 export function HomePage() {
   return (
     <>
       <NavBar />
       <Hero />
-      <HackerEffectText initialValue="Access Granted">
-        <div className="content-container">
-          <p>dcesjhcsjdbc wfs fgjsfd sd gjrej gjeh fheufndbcne faf</p>
-        </div>
-      </HackerEffectText>
-      <p>Home page</p>
+      <img
+        src={gifs.scroll_bottom}
+        alt="scroll bottom"
+        className="w-[3em] mx-auto -mt-[3rem] "
+      />
+      <br />
+      <AboutUs />
     </>
   );
 }
