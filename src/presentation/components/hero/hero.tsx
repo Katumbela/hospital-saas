@@ -14,7 +14,7 @@ export function Hero() {
           className="absolute animate-pulse-slow"
           alt=""
         />
-        <div className="flex h-[600px]">
+        <div className="flex h-[600px]  2xl:h-[800px]">
           <div className="w-7/12  z-10 my-auto grid items-center">
             <div>
               <h1 className="text-8xl text-white font-bold ">HackyOff</h1>
@@ -29,7 +29,7 @@ export function Hero() {
                 profissionais e entusiastas da segurança cibernética.
               </p>
               <br />
-              <div className="grid mb-5 grid-cols-3">
+              <div className="grid 2xl:mt-[3rem] 2xl:mb-[2rem] mb-5 grid-cols-3">
                 <div className="flex  gap-1 text-white">
                   <img src={icons.notes} className="h-[3em] w-[3em]" alt="" />
                   <span className="text-4xl my-auto font-bold">+50</span>

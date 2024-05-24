@@ -1,11 +1,10 @@
-
 import { bg, icons } from "../../../utils/image-exporter";
 import { BsPlayCircle } from "react-icons/bs";
 
 export function AboutUs() {
   return (
     <>
-      <section className="text-center mt-[5rem] container">
+      <section className="text-center mt-[5rem] 2xl:mt-[12rem] container">
         <h1 className="text-white text-5xl font-bold">Quem Nós Somos </h1>
         <br />
         <br />
@@ -76,7 +75,6 @@ export function AboutUs() {
                     <img src={icons.pcb} className="w-[2em]" alt="" />
                     <span className="my-auto">HackyOff {"_>"}</span>
                   </p>
-                  <br />
                   <b className="text-white">Nossos Objectivos </b>
                   <ol className="text-white text-sm">
                     <li className="my-2">
@@ -95,15 +93,12 @@ export function AboutUs() {
                     <img src={icons.pcb} className="w-[2em]" alt="" />
                     <span className="my-auto">HackyOff {"_>"}</span>
                   </p>
-                  <br />
-                  <b className="text-white">Nossos Objectivos </b>
+                  <b className="text-white">Nossa Visão </b>
                   <ol className="text-white text-sm">
                     <li className="my-2">
-                      1. Capacitar profissionais e entusiastas da segurança
-                      cibernética.
-                    </li>
-                    <li className="my-2">
-                      2. Cultivar uma comunidade engajada e colaborativa.
+                      A visão da HakyOff é ser reconhecida como uma plataforma
+                      líder mundial em treinamento em cibersegurança,
+                      impulsionando a excelência e a inovaçã
                     </li>
                   </ol>
                 </div>
@@ -112,9 +107,9 @@ export function AboutUs() {
             <br />
             <div className="video relative">
               <img src={bg.bg_video} className="w-full " alt="" />
-              <div className="play cursor-pointer items-center hover:text-secondary place-content-center z-10 h-[5rem] bg-primary w-[5rem] absolute top-[40%] left-[40%] rounded-full grid">
+              <div className="play cursor-pointer items-center place-content-center z-10 h-[5rem] bg-primary w-[5rem] absolute top-[40%] left-[40%] rounded-full grid">
                 {" "}
-                <BsPlayCircle className="text-3xl" />
+                <BsPlayCircle className="text-3xl hover:scale-[1.5] transition-all" />
               </div>
               <div className="play items-center place-content-center hover:animate-none animate-ping h-[4rem] bg-primary w-[4rem] absolute top-[42%] left-[41.5%] rounded-full grid"></div>
             </div>
