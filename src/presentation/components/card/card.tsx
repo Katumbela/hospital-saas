@@ -3,6 +3,9 @@ import { ICard } from "../../../interfaces/card/card";
 import { formatMoney } from "../../../utils/formatToMoney";
 import { icons } from "../../../utils/image-exporter";
 import { Button } from "../button/button";
+import { abbreviateText } from "../../../utils/abreviate";
+import { TeacherAvatarComponent } from "../teacher-avatar/teacher-avatar";
+import { CourseDetailsTime } from "../course-detail-time/course-detail-tie";
 
 export function CardComponent({ datas }: ICard) {
   return (
@@ -31,42 +34,33 @@ export function CardComponent({ datas }: ICard) {
         </div>
         <br />
         <div>
-          <h1 className="text-white text-2xl  font-bold">{datas.title}</h1>
-          <p className="text-secondary mt-2 text-sm">{datas.description}</p>
+          <h1 className="text-white text-xl 2xl:text-2xl  font-bold">
+            {datas.title}
+          </h1>
+          <p className="text-secondary hacker mt-2 text-xs lg:text-sm">
+            {abbreviateText(datas.description, 75)}
+          </p>
         </div>
         <div className="flex mt-5 justify-between">
-          <div className="flex gap-2">
-            <img src={datas.trainer.picture} alt="" className="w-[3em]" />
-            <div className="flex flex-col">
-              <span className="text-white font-semibold">
-                {datas.trainer.name}
-              </span>
-              <span className="text-secondary text-sm">
-                {datas.trainer.role}
-              </span>
-            </div>
-          </div>
-          <div className="flex my-auto gap-2">
-            <span className="flex gap-2 text-white font-semibold">
-              <img
-                src={icons.time}
-                className="w-[1em] h-[1em] my-auto"
-                alt=""
-              />
-              {datas.hours} H
-            </span>
-            <span className="flex gap-2 text-white font-semibold">
-              <img
-                src={icons.time}
-                className="w-[1em] h-[1em] my-auto"
-                alt=""
-              />
-              {datas.students} Alunos
-            </span>
-          </div>
+          <TeacherAvatarComponent
+            name={datas.trainer.name}
+            picture={datas.trainer.picture}
+            role={datas.trainer.role}
+          />
+
+          <CourseDetailsTime
+            hours={datas.hours}
+            students={datas.students}
+            studentsIcon={icons.people}
+            timeIcon={icons.time}
+          />
         </div>
         <br />
-        <Button text="Inscrever-se" className="w-full justify-center" rightIcon={FaArrowRight} />
+        <Button
+          text="Inscrever-se"
+          className="w-full justify-center"
+          rightIcon={FaArrowRight}
+        />
       </div>
     </>
   );
