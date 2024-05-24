@@ -1,4 +1,4 @@
-import { icons } from "../../../utils/image-exporter"; 
+import { icons } from "../../../utils/image-exporter";
 
 export function AboutUs() {
   return (
@@ -24,9 +24,47 @@ export function AboutUs() {
             </p>
             <br />
             <button className="bg-primary flex gap-2 px-3 py-2 rounded-md font-semibold">
-              <img src={icons.pin_btn} alt="pin " className="w-[1.5em] my-auto"/>
-             <span className="my-auto"> Confira os benefícios que temos para sí !</span>
+              <img
+                src={icons.pin_btn}
+                alt="pin "
+                className="w-[1.5em] my-auto"
+              />
+              <span className="my-auto">
+                {" "}
+                Confira os benefícios que temos para sí !
+              </span>
             </button>
+            <br />
+            <ul className="text-white">
+              <li className="flex gap-2 my-2">
+                <img src={icons.check_list} className="w-[2.5em]" alt="" />
+                <span className="my-auto">
+                  Treinamentos ministrados por especialistas em Segurança da
+                  Informação.
+                </span>
+              </li>
+              <li className="flex gap-2 my-2">
+                <img src={icons.check_list} className="w-[2.5em]" alt="" />
+                <span className="my-auto">
+                  Laboratórios práticos para aplicação directa do conhecimento
+                  adquirido.
+                </span>
+              </li>
+              <li className="flex gap-2 my-2">
+                <img src={icons.check_list} className="w-[2.5em]" alt="" />
+                <span className="my-auto">
+                  Capture the Flags (CTFs) gratuitos para testar habilidades e
+                  competências
+                </span>
+              </li>
+              <li className="flex gap-2 my-2">
+                <img src={icons.check_list} className="w-[2.5em]" alt="" />
+                <span className="my-auto">
+                  Acesso a atualizações regulares sobre tendências, técnicas e
+                  ferramentas em
+                </span>
+              </li>
+            </ul>
           </div>
           <div className="w-5/12"></div>
         </div>
