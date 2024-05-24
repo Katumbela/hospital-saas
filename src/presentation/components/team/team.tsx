@@ -10,7 +10,7 @@ export function TeamComponent() {
         </center>
         <br />
         <div className="container">
-          <div className="grid gap-3 grid-cols-6">
+          <div className="grid gap-8 2xl:gap-3 md:grid-cols-3 2xl:grid-cols-6">
             {TeamDatas.map((user) => (
               <TeamCard datas={user} key={user.id} />
             ))}
