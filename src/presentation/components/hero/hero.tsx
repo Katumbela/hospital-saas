@@ -5,7 +5,9 @@ import { bg, icons } from "../../../utils/image-exporter";
 export function Hero() {
   return (
     <div className="container ">
-        <img src={bg.bg_hero_fundo} className="absolute" alt="" />
+    <img src={bg.bg_hero_fundo} className="absolute" alt="" />
+      <img src={bg.bg_2} className="absolute" alt="" />
+      <img src={bg.bg_hero_fundo} className="absolute animate-pulse-slow" alt="" />
       <div className="flex h-[600px]">
         <div className="w-full  z-10 my-auto grid items-center">
           <div>
@@ -41,7 +43,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="flex  gap-1 text-white">
-                <img src={icons.taca} className="h-[3em] w-[3em]" alt="" />
+                <img src={icons.taca} className="h-[3em]  w-[3em]" alt="" />
                 <span className="text-4xl my-auto font-bold">24/7</span>
                 <div>
                   <div className="flex gap-0 flex-col">
@@ -66,7 +68,7 @@ export function Hero() {
           </div>
         </div>
         <div className="w-full">
-            <img src={bg.bg_hero} alt="" />
+          <img src={bg.bg_hero} className="z-10" alt="" />
         </div>
       </div>
     </div>
