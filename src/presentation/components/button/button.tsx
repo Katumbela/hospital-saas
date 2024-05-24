@@ -5,6 +5,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   text?: string;
   leftIcon?: ElementType;
   icon?: ElementType;
+  color?: string;
   rightIcon?: ElementType;
   isLoading?: boolean;
 };
@@ -16,23 +17,30 @@ export function Button({
   icon: Icon,
   isLoading,
   className,
+  color,
   ...props
 }: ButtonProps) {
   return (
     <button
-      className={`btn text-white   ${className || ""}`}
+      className={`px-4 py-2 gap-3 rounded-md flex ${
+        className || ""
+      } font-semibold  ${
+        color === "primary"
+          ? "bg-primary  hover:bg-primary/90"
+          : "bg-white  hover:bg-white/90"
+      }`}
       disabled={isLoading}
       {...props}
     >
       {LeftIcon && (isLoading ? <FaSpinner /> : <LeftIcon />)}
-      {text || ""}
+      <span className="my-auto">{text || ""}</span>
       {(RightIcon || Icon) &&
         (isLoading ? (
           <FaSpinner />
         ) : RightIcon ? (
-          <RightIcon />
+          <RightIcon className="my-auto" />
         ) : (
-          Icon && <Icon />
+          Icon && <Icon className="my-auto" />
         ))}
     </button>
   );

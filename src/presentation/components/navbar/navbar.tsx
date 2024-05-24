@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { logos } from "../../../utils/image-exporter";
 import { FaArrowRight } from "react-icons/fa";
+import { HackerEffectText } from "@nekzus/react-hacker-effect";
 
 export function NavBar() {
   return (
@@ -12,22 +13,34 @@ export function NavBar() {
           </div>
           <div className="flex my-auto gap-5">
             <Link className="nav-link" to={"/"}>
-              Início
+              <HackerEffectText initialValue=" Início">
+                <span>Inicio</span>
+              </HackerEffectText>
             </Link>
             <Link className="nav-link" to={"/"}>
-              Sobre
+              <HackerEffectText initialValue=" Sobre">
+                <span>Inicio</span>
+              </HackerEffectText>
             </Link>
             <Link className="nav-link" to={"/"}>
-              Treinamentos
+              <HackerEffectText initialValue=" Treinamentos">
+                <span>Inicio</span>
+              </HackerEffectText>
             </Link>
             <Link className="nav-link" to={"/"}>
-              Equipa
+              <HackerEffectText initialValue=" Equipa">
+                <span>equipa</span>
+              </HackerEffectText>
             </Link>
             <Link className="nav-link" to={"/"}>
-              Testemunhos
+              <HackerEffectText initialValue=" Testemunhos">
+                <span>testemunhos</span>
+              </HackerEffectText>
             </Link>
             <Link className="nav-link" to={"/"}>
-              Contactos
+              <HackerEffectText initialValue=" Contactos">
+                <span>contactos </span>
+              </HackerEffectText>
             </Link>
           </div>
           <div className="flex gap-4">
