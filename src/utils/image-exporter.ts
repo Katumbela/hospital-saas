@@ -10,6 +10,11 @@ import user_tag from "../assets/icons/user-tag.png";
 import fb from "../assets/icons/facebook.png";
 import insta from "../assets/icons/insta.png";
 import yt from "../assets/icons/youtub.png";
+import secur from "../assets/icons/secur.png";
+import people from "../assets/icons/people.png";
+import energy from "../assets/icons/energy.png";
+import time from "../assets/icons/time.png";
+import exclamation from "../assets/icons/exclamation.png";
 import linkedin from "../assets/icons/linkedin.png";
 
 //exportar os bgs
@@ -52,8 +57,13 @@ export const icons = {
   pin_btn,
   pcb,
   check_list,
+  energy,
+  time,
+  people,
+  secur,
   fb,
   linkedin,
+  exclamation,
   yt,
   insta,
   notes,
