@@ -12,6 +12,7 @@ import insta from "../assets/icons/insta.png";
 import yt from "../assets/icons/youtub.png";
 import secur from "../assets/icons/secur.png";
 import people from "../assets/icons/people.png";
+import apos from "../assets/icons/apos.png";
 import energy from "../assets/icons/energy.png";
 import time from "../assets/icons/time.png";
 import exclamation from "../assets/icons/exclamation.png";
@@ -62,6 +63,7 @@ export const icons = {
   people,
   secur,
   fb,
+  apos,
   linkedin,
   exclamation,
   yt,
