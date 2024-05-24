@@ -1,10 +1,11 @@
 import { FaArrowRight } from "react-icons/fa";
 import { Button } from "../button/button";
+import { icons } from "../../../utils/image-exporter";
 
 export function Hero() {
   return (
     <div className="container ">
-      <div className="flex h-[500px]">
+      <div className="flex h-[600px]">
         <div className="w-full my-auto grid items-center">
           <div>
             <h1 className="text-8xl text-white font-bold ">HackyOff</h1>
@@ -19,6 +20,35 @@ export function Hero() {
               entusiastas da segurança cibernética.
             </p>
             <br />
+            <div className="grid mb-5 grid-cols-3">
+              <div className="flex  gap-1 text-white">
+                <img src={icons.notes} className="h-[3em] w-[3em]" alt="" />
+                <span className="text-4xl font-bold">+50</span>
+                <div>
+                  <div className="flex gap-0 flex-col">
+                    <span>Laboratórios</span> <span>Práticos</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex  gap-1 text-white">
+                <img src={icons.user_tag} className="h-[3em] w-[3em]" alt="" />
+                <span className="text-4xl font-bold">+50</span>
+                <div>
+                  <div className="flex gap-0 flex-col">
+                    <span>Instrutores de</span> <span>Certificados</span>
+                  </div>
+                </div>
+              </div>
+              <div className="flex  gap-1 text-white">
+                <img src={icons.taca} className="h-[3em] w-[3em]" alt="" />
+                <span className="text-4xl font-bold">+50</span>
+                <div>
+                  <div className="flex gap-0 flex-col">
+                    <span>Suporte</span> <span>Especializado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="flex gap-6">
               <Button
                 color={"primary"}
