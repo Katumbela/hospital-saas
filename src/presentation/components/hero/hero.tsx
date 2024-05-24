@@ -13,7 +13,7 @@ export function Hero() {
         alt=""
       />
       <div className="flex h-[600px]">
-        <div className="w-full  z-10 my-auto grid items-center">
+        <div className="w-7/12  z-10 my-auto grid items-center">
           <div>
             <h1 className="text-8xl text-white font-bold ">HackyOff</h1>
             <p className="text-5xl font-bold mt-6  text-secondary">
@@ -71,7 +71,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="w-full">
+        <div className="w-5/12">
           <img src={bg.bg_hero} className="z-10" alt="" />
         </div>
       </div>
