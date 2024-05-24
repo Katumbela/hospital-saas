@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       animation: {
-        'pulse-slow': 'pulse 3s linear infinite',
+        "pulse-slow": "pulse 3s linear infinite",
       },
       colors: {
         primary: "#FFC700",
         dark: "#0E1014",
         violet: "#825EEE",
         secondary: "#C9C9C9",
+        team: "#101217",
       },
       container: {
         center: true,

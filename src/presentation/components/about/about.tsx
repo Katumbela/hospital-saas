@@ -10,7 +10,7 @@ export function AboutUs() {
         <br />
         <br />
         <div className="flex">
-          <div className="w-7/12 text-start">
+          <div className="w-7/12 z-10 text-start">
             <h2 className="text-4xl text-white font-bold">
               A HakyOff é uma Startup dedicada à treinamentos em Segurança da
               Informação,
@@ -68,10 +68,10 @@ export function AboutUs() {
             </ul>
           </div>
           <div className="w-5/12">
-            <div className="flex gap-4">
-              <div className="w-full">
+            <div className="flex  gap-4">
+              <div className="w-full z-10">
                 <div className="border text-start p-3 rounded-md">
-                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-4">
+                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
                     <img src={icons.pcb} className="w-[2em]" alt="" />
                     <span className="my-auto">HackyOff {"_>"}</span>
                   </p>
@@ -87,9 +87,9 @@ export function AboutUs() {
                   </ol>
                 </div>
               </div>
-              <div className="w-full">
+              <div className="w-full z-10">
                 <div className="border text-start p-3 rounded-md">
-                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-4">
+                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
                     <img src={icons.pcb} className="w-[2em]" alt="" />
                     <span className="my-auto">HackyOff {"_>"}</span>
                   </p>
@@ -106,7 +106,10 @@ export function AboutUs() {
             </div>
             <br />
             <div className="video relative">
-              <img src={bg.bg_video} className="w-full " alt="" />
+              <div className="relative">
+                <img src={bg.bg_video} className="w-full " alt="" />
+                <div className="absolute top-0 right-0 left-0 bottom-0"></div>
+              </div>
               <div className="play cursor-pointer items-center place-content-center z-10 h-[5rem] bg-primary w-[5rem] absolute top-[40%] left-[40%] rounded-full grid">
                 {" "}
                 <BsPlayCircle className="text-3xl hover:scale-[1.5] transition-all" />

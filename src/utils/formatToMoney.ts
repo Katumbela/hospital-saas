@@ -7,6 +7,6 @@ export const formatMoney = (value: number): string => {
     const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   
     // Adicionar o símbolo da moeda Kz
-    return `Kz ${integerPart}.${parts[1]}`;
+    return ` ${integerPart}.${parts[1]} Kz`;
   };
   
