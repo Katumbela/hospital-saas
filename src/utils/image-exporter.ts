@@ -13,6 +13,7 @@ import linkedin from "../assets/icons/linkedin.png";
 
 import bg_card from "../assets/bgs/bg-card.png";
 import bg_hero from "../assets/bgs/hero.png";
+import bg_hero_fundo from "../assets/bgs/bg_hero_fundo.png";
 import bg_newsletter from "../assets/bgs/newsletter.png";
 import bg_video from "../assets/bgs/video.png";
 
@@ -30,6 +31,7 @@ export const bg = {
   bg_hero,
   bg_newsletter,
   bg_video,
+  bg_hero_fundo,
 };
 
 export const logos = {
