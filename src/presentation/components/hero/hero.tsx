@@ -80,7 +80,7 @@ export function Hero() {
 
           <img
             src={bg.bg_hero}
-            className="-z-10 absolute 2xl:top:0 2xl:bottom-auto bottom-0 h-[80%] -right-[5rem]  w-[60%] 2xl:w-[50%] 2xl:h-[70%] my-auto"
+            className="-z-10 absolute 2xl:top:0 2xl:bottom-auto bottom-[15rem] h-[35rem] -right-[5rem]  w-[50rem] 2xl:w-[60rem] 2xl:h-[45rem] my-auto"
             alt=""
           />
         </div>
