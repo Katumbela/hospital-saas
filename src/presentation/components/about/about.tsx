@@ -1,5 +1,4 @@
-import { icons } from "../../../utils/image-exporter";
-import { Button } from "../button/button";
+import { icons } from "../../../utils/image-exporter"; 
 
 export function AboutUs() {
   return (
