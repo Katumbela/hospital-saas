@@ -1,5 +1,8 @@
 import { bg, icons } from "../../../utils/image-exporter";
 import { BsPlayCircle } from "react-icons/bs";
+import { Overlay } from "../overlay/overlay";
+import { BenefitsData } from "../../../domain/config/benefits-config";
+import { BenefitsListComponent } from "../benefits-list/benefits-list";
 
 export function AboutUs() {
   return (
@@ -9,7 +12,7 @@ export function AboutUs() {
         <br />
         <br />
         <br />
-        <div className="flex">
+        <div className="flex gap-5">
           <div className="w-7/12 z-10 text-start">
             <h2 className="text-4xl text-white font-bold">
               A HakyOff é uma Startup dedicada à treinamentos em Segurança da
@@ -37,43 +40,21 @@ export function AboutUs() {
             </button>
             <br />
             <ul className="text-white">
-              <li className="flex gap-2 my-2">
-                <img src={icons.check_list} className="w-[2.5em]" alt="" />
-                <span className="my-auto">
-                  Treinamentos ministrados por especialistas em Segurança da
-                  Informação.
-                </span>
-              </li>
-              <li className="flex gap-2 my-2">
-                <img src={icons.check_list} className="w-[2.5em]" alt="" />
-                <span className="my-auto">
-                  Laboratórios práticos para aplicação directa do conhecimento
-                  adquirido.
-                </span>
-              </li>
-              <li className="flex gap-2 my-2">
-                <img src={icons.check_list} className="w-[2.5em]" alt="" />
-                <span className="my-auto">
-                  Capture the Flags (CTFs) gratuitos para testar habilidades e
-                  competências
-                </span>
-              </li>
-              <li className="flex gap-2 my-2">
-                <img src={icons.check_list} className="w-[2.5em]" alt="" />
-                <span className="my-auto">
-                  Acesso a atualizações regulares sobre tendências, técnicas e
-                  ferramentas em
-                </span>
-              </li>
+              {BenefitsData.map((benefit) => (
+                <BenefitsListComponent datas={benefit} />
+              ))}
             </ul>
           </div>
           <div className="w-5/12">
             <div className="flex  gap-4">
               <div className="w-full z-10">
                 <div className="border text-start p-3 rounded-md">
-                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
+                  <p className="flex w-[10rem] relative py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
+                    <Overlay />
                     <img src={icons.pcb} className="w-[2em]" alt="" />
-                    <span className="my-auto hacker font-bold">HackyOff {"_>"}</span>
+                    <span className="my-auto hacker font-bold">
+                      HackyOff {"_>"}
+                    </span>
                   </p>
                   <b className="text-white">Nossos Objectivos </b>
                   <ol className="text-white text-sm">
@@ -89,9 +70,12 @@ export function AboutUs() {
               </div>
               <div className="w-full z-10">
                 <div className="border text-start p-3 rounded-md">
-                  <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
+                  <p className="flex relative w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
+                    <Overlay />{" "}
                     <img src={icons.pcb} className="w-[2em]" alt="" />
-                    <span className="my-auto hacker font-bold">HackyOff {"_>"}</span>
+                    <span className="my-auto hacker font-bold">
+                      HackyOff {"_>"}
+                    </span>
                   </p>
                   <b className="text-white">Nossa Visão </b>
                   <ol className="text-white text-sm">

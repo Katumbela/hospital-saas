@@ -8,7 +8,7 @@ import { Typewriter } from "react-simple-typewriter";
 export function Hero() {
   return (
     <>
-      <img src={bg.bg_2} className="absolute" alt="" />
+      <img src={bg.bg_2} className="absolute -z-10" alt="" />
 
       <div className="container ">
         <img src={bg.bg_hero_fundo} className="absolute opacity-[.5]" alt="" />

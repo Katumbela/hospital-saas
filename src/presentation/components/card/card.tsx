@@ -10,7 +10,7 @@ import { CourseDetailsTime } from "../course-detail-time/course-detail-tie";
 export function CardComponent({ datas }: ICard) {
   return (
     <>
-      <div className="w-full z-10">
+      <div className="w-full z-20">
         <img src={datas.cover} alt="" className="w-full" />
         <br />
         <div className="flex justify-between">

@@ -5,13 +5,13 @@ import { CardComponent } from "../card/card";
 export function TrainingSection() {
   return (
     <>
-      <section className="container 2xl:mt-[10rem] mt-[5rem]">
+      <section className="container z-10 2xl:mt-[10rem] mt-[5rem]">
         <center>
-          <h1 className="text-white hacker text-6xl font-bold">
+          <h1 className="text-white hacker text-4xl 2xl:text-6xl font-bold">
             " Treinamentos em Destaque "
           </h1>
         </center>
-        <div className="grid mt-[5rem] grid-cols-3 gap-8">
+        <div className="grid static z-20 mt-[5rem] grid-cols-3 gap-8">
           {TrainingsData.map((train, index) => (
             <motion.div
               viewport={{ once: true }}
@@ -20,7 +20,6 @@ export function TrainingSection() {
               transition={{ duration: .4, delay: index * .1 }}
               key={train.id}
             >
-              {index}
               <CardComponent datas={train} />
             </motion.div>
           ))}

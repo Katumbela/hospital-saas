@@ -32,12 +32,13 @@ div {
   background: #ffffff; /* Cor do thumb */
   border-radius: 100px !important; /* Borda do thumb */
 }
-
-/* Para navegadores Firefox */
-/* Este é um exemplo básico, o Firefox tem menos flexibilidade de estilização */
-/* Note que pode haver variações dependendo da versão do Firefox */
-/* Você pode precisar usar vendor prefixes específicos do Firefox para versões mais antigas */
+ 
 * {
   scrollbar-width: thin; /* Largura da barra de rolagem */
   scrollbar-color: #ffc700 #fff; /* Cor da barra de rolagem e do thumb */
+}
+
+
+.z-20 {
+  z-index: 9!important;
 }

@@ -2,11 +2,32 @@ import { Link } from "react-router-dom";
 import { logos } from "../../../utils/image-exporter";
 import { FaArrowRight } from "react-icons/fa";
 import { HackerEffectText } from "@nekzus/react-hacker-effect";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export function NavBar() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+ 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+ 
   return (
     <>
-      <div className=" border-b-[2px] py-3 border-sky-600">
+      <motion.div className=" border-b-[2px] py-3 border-sky-600">
         <div className="flex justify-between container">
           <div className="logo">
             <img src={logos.logo} className="" alt="" />
@@ -52,7 +73,7 @@ export function NavBar() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
