@@ -1,9 +1,6 @@
 {
-    "settings": {
-      "node": {
-        "force": true,
-        "legacyPeerDeps": true
-      }
-    }
+    "version": 2,
+    "force": true,
+    "legacyPeerDeps": true
   }
   
