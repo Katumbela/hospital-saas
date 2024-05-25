@@ -4,6 +4,8 @@ import { FaTwitter } from "react-icons/fa6";
 import { icons } from "../../../utils/image-exporter";
 import { Overlay } from "../overlay/overlay";
 import { motion } from "framer-motion";
+import { Whisper } from "rsuite";
+import DefaultPopover from "../default-popover/default-popover";
 
 export function TeamCard({ datas }: ITeamCard) {
   return (
@@ -14,11 +16,20 @@ export function TeamCard({ datas }: ITeamCard) {
       transition={{ duration: 0.5, delay: datas.id * 0.06 }}
       className="bg-dark relative z-10 border border-gray-100/10 rounded-lg text-center h-[19.5rem] py-[2rem] px-3"
     >
-      <img
-        src={icons.exclamation}
-        className="w-[1.5em] absolute top-1.5 right-1.5"
-        alt=""
-      />
+      <Whisper
+        trigger="hover"
+        placement="right"
+        speaker={<DefaultPopover content={`I am positioned to the right`} />}
+      >
+        <img
+          src={icons.exclamation}
+          title={`Clique nas mídias para ver mais sobre ${
+            datas.name.split(" ")[0]
+          }`}
+          className="w-[1.5em] absolute top-1.5 cursor-pointer right-1.5"
+          alt=""
+        />
+      </Whisper>
       <div className="relative">
         <Overlay />
         <img src={datas.picture} alt="" className="mx-auto" />

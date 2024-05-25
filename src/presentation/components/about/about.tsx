@@ -7,7 +7,10 @@ import { BenefitsListComponent } from "../benefits-list/benefits-list";
 export function AboutUs() {
   return (
     <>
-      <section className="text-center mt-[5rem] 2xl:mt-[12rem] container">
+      <section
+        id="about"
+        className="text-center mt-[5rem] 2xl:mt-[12rem] container"
+      >
         <h1 className="text-white text-5xl font-bold">Quem Nós Somos </h1>
         <br />
         <br />
@@ -41,7 +44,7 @@ export function AboutUs() {
             <br />
             <ul className="text-white">
               {BenefitsData.map((benefit) => (
-                <BenefitsListComponent datas={benefit} />
+                <BenefitsListComponent key={benefit.id} datas={benefit} />
               ))}
             </ul>
           </div>

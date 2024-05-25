@@ -5,3 +5,15 @@
 .nav-link {
   @apply text-white font-medium hover:text-primary transition-all;
 }
+
+.footer-link {
+  @apply text-secondary  hover:text-primary hover:underline transition-all;
+}
+
+.click {
+  @apply transition-all active:scale-95;
+}
+
+.active-nav {
+  @apply text-primary border-b-2  pb-[.5px] border-primary
+}

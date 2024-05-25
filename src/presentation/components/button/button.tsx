@@ -22,7 +22,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`px-4 py-2 gap-3 rounded-md flex ${
+      className={`px-4 py-2 transition-all gap-3 rounded-md flex ${
         className || ""
       } font-semibold  ${
         color === "primary"
