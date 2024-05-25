@@ -5,7 +5,7 @@ import { CardComponent } from "../card/card";
 export function TrainingSection() {
   return (
     <>
-      <section id="trainings" className="container z-10 2xl:mt-[10rem] mt-[5rem]">
+      <section id="trainings" className="container z-10 2xl:pt-[10rem] pt-[5rem]">
         <center>
           <h1 className="text-white hacker text-4xl 2xl:text-6xl font-bold">
             " Treinamentos em Destaque "
