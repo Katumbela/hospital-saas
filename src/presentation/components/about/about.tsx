@@ -73,7 +73,7 @@ export function AboutUs() {
                 <div className="border text-start p-3 rounded-md">
                   <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
                     <img src={icons.pcb} className="w-[2em]" alt="" />
-                    <span className="my-auto">HackyOff {"_>"}</span>
+                    <span className="my-auto hacker font-bold">HackyOff {"_>"}</span>
                   </p>
                   <b className="text-white">Nossos Objectivos </b>
                   <ol className="text-white text-sm">
@@ -91,7 +91,7 @@ export function AboutUs() {
                 <div className="border text-start p-3 rounded-md">
                   <p className="flex w-[10rem] py-1 px-2 bg-primary/40 rounded-md text-primary font-bold gap-2">
                     <img src={icons.pcb} className="w-[2em]" alt="" />
-                    <span className="my-auto">HackyOff {"_>"}</span>
+                    <span className="my-auto hacker font-bold">HackyOff {"_>"}</span>
                   </p>
                   <b className="text-white">Nossa Visão </b>
                   <ol className="text-white text-sm">

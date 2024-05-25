@@ -26,7 +26,7 @@ export const TrainingsData: ITraining[] = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
     trainer: {
       id: 3,
-      name: "Joao A. Katombela",
+      name: "Joao Katombela",
       role: "Instrutor",
       picture: users.user_3,
     },
