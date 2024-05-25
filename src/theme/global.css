@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 .hacker {
   font-family: "Anonymous Pro", monospace;
-   
 }
- 
 
 html,
 body {
@@ -32,17 +29,15 @@ div {
   background: #ffffff; /* Cor do thumb */
   border-radius: 100px !important; /* Borda do thumb */
 }
- 
+
 * {
   scrollbar-width: thin; /* Largura da barra de rolagem */
   scrollbar-color: #ffc700 #fff; /* Cor da barra de rolagem e do thumb */
 }
 
-
 .z-20 {
-  z-index: 9!important;
+  z-index: 9 !important;
 }
-
 
 .testimonials-container {
   overflow: hidden;
@@ -99,4 +94,10 @@ div {
 
 .active-dot {
   background-color: #333;
+}
+
+.react-glitch-wrapper {
+  font-weight: 300 !important;
+  font-size: 20px!important;
+  font-family: "Anonymous Pro", monospace!important;
 }

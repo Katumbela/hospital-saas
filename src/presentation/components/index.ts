@@ -19,3 +19,4 @@ export * from "./newsletter/newsletter";
 export * from "./input/input";
 export * from "./footer/footer";
 export * from "./default-popover/default-popover";
+export * from './glitch-effect/glitch-effect'

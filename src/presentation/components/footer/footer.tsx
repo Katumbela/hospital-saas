@@ -39,7 +39,7 @@ export function Footer() {
   };
 
   return (
-    <footer id="contacts" className="container pb-[4rem] md:px-[10%]">
+    <footer id="contacts" className="container pb-[3rem] md:px-[10%]">
       <div className="grid place-content-center justify-center grid-cols-3">
         <div>
           <b className="text-white">Sobre</b>
@@ -71,13 +71,21 @@ export function Footer() {
         <div>
           <b className="text-white">Social</b>
           <ul>
-            <a href="#" target="__blank" className="footer-link flex gap-3 mt-2">
+            <a
+              href="#"
+              target="__blank"
+              className="footer-link flex gap-3 mt-2"
+            >
               {" "}
               <FaYoutube className="my-auto" />
               Youtube
             </a>
 
-            <a href="#" target="__blank" className="footer-link flex gap-3 my-2">
+            <a
+              href="#"
+              target="__blank"
+              className="footer-link flex gap-3 my-2"
+            >
               {" "}
               <FaFacebook className="my-auto" /> Facebook
             </a>
@@ -87,7 +95,11 @@ export function Footer() {
               <FaInstagram className="my-auto" /> Instagram
             </a>
 
-            <a href="#" target="__blank" className="footer-link flex gap-3 mt-2">
+            <a
+              href="#"
+              target="__blank"
+              className="footer-link flex gap-3 mt-2"
+            >
               {" "}
               <FaLinkedin className="my-auto" /> Linkedin
             </a>
@@ -102,7 +114,9 @@ export function Footer() {
           <FaArrowUp />
         </button>
       )}
-      <center>&copy; HackyOff - 2024</center>
+      <br />
+
+      <center className="text-secondary">&copy; HackyOff - 2024</center>
     </footer>
   );
 }

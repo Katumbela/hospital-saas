@@ -3,7 +3,7 @@ import { Button } from "../button/button";
 import { bg, icons } from "../../../utils/image-exporter";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import { Typewriter } from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter"; 
 
 export function Hero() {
   return (
@@ -26,7 +26,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 className="text-8xl hacker text-white font-bold "
-              > 
+              >
                 <Typewriter
                   words={["HackyOff", "HackyOff"]}
                   loop={1}
@@ -34,8 +34,9 @@ export function Hero() {
                   cursorStyle="_"
                   typeSpeed={80}
                   deleteSpeed={50}
-                  delaySpeed={1500}  
+                  delaySpeed={1500}
                 />
+                
               </motion.h1>
               <motion.p
                 viewport={{ once: true }}
