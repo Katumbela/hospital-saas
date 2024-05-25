@@ -71,26 +71,26 @@ export function Footer() {
         <div>
           <b className="text-white">Social</b>
           <ul>
-            <li className="footer-link flex gap-3 mt-2">
+            <a href="#" target="__blank" className="footer-link flex gap-3 mt-2">
               {" "}
               <FaYoutube className="my-auto" />
               Youtube
-            </li>
+            </a>
 
-            <li className="footer-link flex gap-3 my-2">
+            <a href="#" target="__blank" className="footer-link flex gap-3 my-2">
               {" "}
               <FaFacebook className="my-auto" /> Facebook
-            </li>
+            </a>
 
-            <li className="footer-link flex gap-3">
+            <a href="#" target="__blank" className="footer-link flex gap-3">
               {" "}
               <FaInstagram className="my-auto" /> Instagram
-            </li>
+            </a>
 
-            <li className="footer-link flex gap-3 mt-2">
+            <a href="#" target="__blank" className="footer-link flex gap-3 mt-2">
               {" "}
               <FaLinkedin className="my-auto" /> Linkedin
-            </li>
+            </a>
           </ul>
         </div>
       </div>
