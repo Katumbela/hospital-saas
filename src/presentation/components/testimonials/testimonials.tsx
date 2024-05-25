@@ -8,14 +8,14 @@ export function TestimonialsSection() {
     dots: true,
     infinite: true,
     autoplay: false,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
           slidesToScroll: 3,
           infinite: true,
           dots: true,
@@ -24,7 +24,7 @@ export function TestimonialsSection() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 4,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -79,7 +79,7 @@ export function TestimonialsSection() {
       <Slider {...settings}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="mx-[2rem]">
-            <div className="text-white p-4  w-[3rem] testimonial">
+            <div className="text-white p-4  w-full testimonial">
               <div className="flex gap-3">
                 <img
                   src={testimonial.img}

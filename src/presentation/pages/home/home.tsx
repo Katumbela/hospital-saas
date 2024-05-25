@@ -1,4 +1,4 @@
-import { AboutUs, Hero, NavBar, TeamComponent, TrainingSection } from "../../components";
+import { AboutUs, Hero, NavBar, TeamComponent, TestimonialsSection, TrainingSection } from "../../components";
 import { gifs } from "../../../utils/image-exporter";
 
 export function HomePage() {
@@ -18,6 +18,8 @@ export function HomePage() {
         <TrainingSection />
         <br />
         <TeamComponent />
+        <br />
+        <TestimonialsSection />
       </div>
       <div className="lg:hidden">
         <center className="text-white ">
