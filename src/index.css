@@ -7,7 +7,7 @@
 }
 
 .footer-link {
-  @apply text-secondary  hover:text-primary hover:underline transition-all;
+  @apply text-secondary cursor-pointer hover:text-primary hover:underline transition-all;
 }
 
 .click {

@@ -1,9 +1,18 @@
 // import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
-import { FaArrowUp } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaEnvelope,
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaMapPin,
+  FaPhone,
+  FaYoutube,
+} from "react-icons/fa";
 
 export function Footer() {
- // const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
@@ -30,11 +39,59 @@ export function Footer() {
   };
 
   return (
-    <footer id="contacts" className="container md:px-[10%]">
-      <div className="grid grid-cols-3">
+    <footer id="contacts" className="container pb-[4rem] md:px-[10%]">
+      <div className="grid place-content-center justify-center grid-cols-3">
         <div>
           <b className="text-white">Sobre</b>
-          <ul className="footer-link">Quem somos</ul>
+          <br />
+          <ul>
+            <li className="footer-link mt-2">Quem somos</li>
+            <li className="footer-link my-2">termos e políticas</li>
+          </ul>
+        </div>
+        <div>
+          <b className="text-white">Contactos</b>
+          <ul>
+            <li className="footer-link flex gap-3 mt-2">
+              {" "}
+              <FaMapPin className="my-auto" /> Luanda, Angola
+            </li>
+
+            <li className="footer-link flex gap-3 my-2">
+              {" "}
+              <FaPhone className="my-auto" /> +244 9123 000 000
+            </li>
+
+            <li className="footer-link flex gap-3">
+              {" "}
+              <FaEnvelope className="my-auto" /> hackyoff@gmail.com
+            </li>
+          </ul>
+        </div>
+        <div>
+          <b className="text-white">Social</b>
+          <ul>
+            <li className="footer-link flex gap-3 mt-2">
+              {" "}
+              <FaYoutube className="my-auto" />
+              Youtube
+            </li>
+
+            <li className="footer-link flex gap-3 my-2">
+              {" "}
+              <FaFacebook className="my-auto" /> Facebook
+            </li>
+
+            <li className="footer-link flex gap-3">
+              {" "}
+              <FaInstagram className="my-auto" /> Instagram
+            </li>
+
+            <li className="footer-link flex gap-3 mt-2">
+              {" "}
+              <FaLinkedin className="my-auto" /> Linkedin
+            </li>
+          </ul>
         </div>
       </div>
       {showScrollButton && (
@@ -43,9 +100,9 @@ export function Footer() {
           className="fixed flex items-center gap-2 px-2 py-4 text-center rounded-xl shadow-lg md:px-4 click bg-primary place-content-center bottom-4 right-4"
         >
           <FaArrowUp />
-           
         </button>
       )}
+      <center>&copy; HackyOff - 2024</center>
     </footer>
   );
 }
