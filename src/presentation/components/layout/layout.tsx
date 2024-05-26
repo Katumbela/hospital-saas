@@ -10,6 +10,7 @@ import {
   BsTrophy,
 } from "react-icons/bs";
 import { FaBed } from "react-icons/fa";
+import { DoctorDashboard } from "../doctor-dash/doctor-dash";
 
 interface SidebarProps {
   onSelect: (item: string) => void;
@@ -30,7 +31,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("practices")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "practices"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -43,7 +44,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("dashboard")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "dashboard"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -56,7 +57,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("appointments")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "appointments"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -69,7 +70,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("opd-bill")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "opd-bill"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -82,7 +83,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("patients")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "patients"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -95,7 +96,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("pharmacy")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "pharmacy"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -108,7 +109,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("ipd")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "ipd"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -123,7 +124,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           onClick={() => handleClick("tatva")}
           className={`cursor-pointer hover:bg-violett active:bg-violett/80 hover:text-white border-b-4 ${
             active === "tatva"
-              ? "text-violett border-violett"
+              ? "text-violett border-violett bg-violett/15"
               : "border-transparent"
           } transition-all w-full h-[5rem] grid items-center place-content-center`}
         >
@@ -147,33 +148,33 @@ export function Layout({ children }: LayoutProps) {
   const renderContent = () => {
     switch (selectedItem) {
       case "practices":
-        return <div>Conteudo  for My Practice</div>;
+        return <div>Conteudo for My Practice</div>;
       case "dashboard":
-        return <div>Conteudo  for Dr. Dashboard</div>;
+        return <DoctorDashboard />;
       case "appointments":
-        return <div>Conteudo  for All Appointments</div>;
+        return <div>Conteudo for All Appointments</div>;
       case "opd-bill":
-        return <div>Conteudo  for OPD Billing</div>;
+        return <div>Conteudo for OPD Billing</div>;
       case "patients":
-        return <div>Conteudo  for All Patients</div>;
+        return <div>Conteudo for All Patients</div>;
       case "pharmacy":
-        return <div>Conteudo  for Pharmacy</div>;
+        return <div>Conteudo for Pharmacy</div>;
       case "ipd":
-        return <div>Conteudo  for IPD</div>;
+        return <div>Conteudo for IPD</div>;
       case "tatva":
-        return <div>Conteudo  for TatvaPodia</div>;
+        return <div>Conteudo for TatvaPodia</div>;
       default:
         return children;
     }
   };
 
   return (
-    <div className="flex gap-10 h-screen">
+    <div className="flex gap-5 h-screen">
       {/* Sidebar */}
       <Sidebar onSelect={setSelectedItem} />
 
       {/* Main Content Area */}
-      <div className="flex-1 mt-3 h-[calc(100vh-6rem)] mb-10 bg-white me-10 overflow-y-auto p-4">
+      <div className="flex-1 mt-3 h-[calc(100vh-6rem)] mb-10 bg-white me-4 overflow-y-auto">
         {renderContent()}
       </div>
     </div>

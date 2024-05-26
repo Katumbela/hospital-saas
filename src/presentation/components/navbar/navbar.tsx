@@ -61,13 +61,13 @@ export function NavBar() {
 
 function NavBarContent() {
   return (
-    <div className="flex justify-between container">
+    <div className="flex justify-between containerr px-[2.5rem]">
       <div className="logo flex gap-5">
         <h1 className="font-bold my-auto text-white text-3xl georgia sans-serif">
-          ATVA CARE
+          TATVA CARE
         </h1>
         <div className="l w-[2px] h-[27px] my-auto bg-white"></div>
-        <h2 className="text-white text-xl my-auto font-semibold">
+        <h2 className="text-white text-md my-auto font-semibold">
           Your Trusted HealthCare Partner
         </h2>
       </div>

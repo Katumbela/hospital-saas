@@ -20,3 +20,4 @@ export * from "./input/input";
 export * from "./footer/footer";
 export * from "./default-popover/default-popover";
 export * from './glitch-effect/glitch-effect'
+export * from './doctor-dash/doctor-dash'
