@@ -6,14 +6,14 @@
 
 html,
 body {
-  overflow: hidden!important;
+  overflow: hidden !important;
 }
 
 html,
 body {
   scroll-behavior: smooth;
 }
- 
+
 ::-webkit-scrollbar {
   width: 12px; /* Largura da barra de rolagem */
 }
@@ -27,9 +27,29 @@ body {
   border-radius: 100px !important; /* Borda do thumb */
 }
 
+ 
+.status-queue {
+  background-color: #6c5ce7; /* Violett */
+  color: white;
+}
+.status-in-progress {
+  background-color: #fdcb6e; /* Amarelo */
+  color: black;
+}
+.status-completed {
+  background-color: #00b894; /* Verde */
+  color: white;
+}
+.status-cancelled {
+  background-color: #d63031; /* Vermelho */
+  color: white;
+}
+
+
+
 * {
   scrollbar-width: thin; /* Largura da barra de rolagem */
-  scrollbar-color: #ffc700 #fff; /* Cor da barra de rolagem e do thumb */
+  scrollbar-color: #280386 #fff; /* Cor da barra de rolagem e do thumb */
 }
 
 .z-20 {
