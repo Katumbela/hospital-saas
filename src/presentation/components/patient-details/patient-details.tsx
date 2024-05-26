@@ -29,11 +29,19 @@ const PatientDetails: React.FC = () => {
   const navigate = useNavigate();
   //const history = useHistory();
 
+  
   // Função para buscar os detalhes do paciente com base no ID
-  const findPatientById = (id: string): PatientDetailsProps | undefined => {
-    return dummyData.find((patient) => patient.id === id);
+  const findPatientById = (
+    id: string | undefined
+  ): PatientDetailsProps | undefined => {
+    // Verifica se o ID não é undefined antes de procurar o paciente
+    if (id !== undefined) {
+      return dummyData.find((patient) => patient.id === id);
+    }
+    return undefined;
   };
 
+  // Busca os detalhes do paciente com base no ID fornecido na URL
   const patientDetails = findPatientById(id);
 
   /*
