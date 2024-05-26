@@ -19,9 +19,9 @@ export function HomePage() {
         </Layout>
       </div>
       <div className="lg:hidden">
-        <center className="text-white ">
+        <center className="text-white">
           <h1 className="text-4xl mt-[45vh]">
-            Não disponivel ainda para este tamanho de tela
+            Não disponível ainda para este tamanho de tela
           </h1>
         </center>
       </div>
