@@ -4,8 +4,6 @@ import { dummyData } from "../../../domain/config/patient-data";
 import { Layout } from "../layout/layout";
 import { NavBar } from "../navbar/navbar";
 import { FaArrowLeft, FaPlus } from "react-icons/fa";
-import { set } from "rsuite/esm/internals/utils/date";
-import { IPatientData } from "../../../interfaces/patient/patient";
 
 interface PatientDetailsProps {
   // Define a interface para os detalhes do paciente
@@ -29,7 +27,6 @@ const PatientDetails: React.FC = () => {
   const navigate = useNavigate();
   //const history = useHistory();
 
-  
   // Função para buscar os detalhes do paciente com base no ID
   const findPatientById = (
     id: string | undefined
