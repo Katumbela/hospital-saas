@@ -1,25 +1,23 @@
 import { Route, Routes } from "react-router-dom";
-import { HomePage } from "./pages";
+import { HomePage, LoginPage } from "./pages";
 import { useState, useEffect } from "react";
 import { Preloader } from "./components";
 
 export function AppRoutes() {
-
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
   // Configurando cookies úteis para SEO e desempenho
 
-  useEffect(() => { 
+  useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false);  
-    }, 4000); 
+      setIsLoading(false);
+    }, 4000);
   }, []);
 
-
-  
   return (
     <>
       <Routes>
-        <Route path="/" element={isLoading ? <Preloader /> : <HomePage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );

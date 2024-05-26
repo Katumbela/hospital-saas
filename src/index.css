@@ -11,9 +11,16 @@
 }
 
 .click {
-  @apply transition-all active:scale-95;
+  @apply transition-all active:scale-[.97];
 }
 
 .active-nav {
-  @apply text-primary border-b-2  pb-[.5px] border-primary
+  @apply text-primary border-b-2  pb-[.5px] border-primary;
+}
+
+.input::placeholder {
+  @apply text-white;
+}
+.bg-anc {
+  @apply bg-gradient-to-r from-violett to-fuchsia-500;
 }

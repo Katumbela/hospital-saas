@@ -1,38 +1,22 @@
-import {
-  AboutUs,
-  Footer,
-  Hero,
-  NavBar,
-  NewsLetter,
-  TeamComponent,
-  TestimonialsSection,
-  TrainingSection,
-} from "../../components";
-import { gifs } from "../../../utils/image-exporter";
+import { NavBar } from "../../components";
+import { Layout } from "../../components/layout/layout";
 
 export function HomePage() {
   return (
     <>
       <div className="hidden lg:block">
         <NavBar />
-        <Hero />
-        <img
-          src={gifs.scroll_bottom}
-          alt="scroll bottom"
-          className="w-[3em] mx-auto -mt-[3rem] mt-[2vh] "
-        />
-        <br />
-        <AboutUs />
-        <br />
-        <TrainingSection />
-        <br />
-        <TeamComponent />
-        <br />
-        <TestimonialsSection />
-        <br />
-        <NewsLetter />
-        <br />
-        <Footer />
+        <Layout>
+          <div className="mx-auto h-[.4rem] w-[15%] rounded-full bg-primary relative"></div>
+          <div className="content">
+            <h1 className="text-3xl font-bold mb-4">Main Content</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              imperdiet...
+            </p>
+            {/* Adicione mais conteúdo aqui para demonstrar a rolagem */}
+          </div>
+        </Layout>
       </div>
       <div className="lg:hidden">
         <center className="text-white ">

@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { logos } from "../../../utils/image-exporter";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaBell, FaUser, FaUserCircle } from "react-icons/fa";
 import { HackerEffectText } from "@nekzus/react-hacker-effect";
 import { AnimatePresence, motion } from "framer-motion";
 import { NavbarDatas } from "../../../domain/config/navbar-config";
+import { FaCaretDown } from "react-icons/fa6";
+import { BsBell, BsCaretDown } from "react-icons/bs";
 
-export type NavBarContentProps ={
-  activeLink: string
-  onLinkClick: (link: string) => void
-}
+export type NavBarContentProps = {
+  activeLink: string;
+  onLinkClick: (link: string) => void;
+};
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +23,6 @@ export function NavBar() {
       } else {
         setIsScrolled(false);
       }
- 
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -47,15 +48,12 @@ export function NavBar() {
             transition={{ duration: 0.2, delay: 0.2 }}
             className={`${
               isScrolled && "shadow-md"
-            } fixed top-0 bg-dark z-50 left-0 right-0 border-b-[2px] py-3 border-sky-600`}
+            } fixed top-0 bg-anc z-50 left-0 right-0 py-3  `}
           >
             <NavBarContent activeLink={activeLink} onLinkClick={handleClick} />
           </motion.div>
         ) : (
-          <div
-            key="default-navbar"
-            className="relative border-b-[2px] py-3 border-sky-600"
-          >
+          <div key="default-navbar" className="relative  py-3 bg-anc">
             <NavBarContent activeLink={activeLink} onLinkClick={handleClick} />
           </div>
         )}
@@ -64,33 +62,31 @@ export function NavBar() {
   );
 }
 
-function NavBarContent({ activeLink, onLinkClick }: NavBarContentProps) {
+function NavBarContent() {
   return (
     <div className="flex justify-between container">
-      <div className="logo">
-        <img src={logos.logo} className="" alt="" />
+      <div className="logo flex gap-5">
+        <h1 className="font-bold my-auto text-white text-3xl georgia sans-serif">
+          ATVA CARE
+        </h1>
+        <div className="l w-[2px] h-[27px] my-auto bg-white"></div>
+        <h2 className="text-white text-xl my-auto font-semibold">
+          Your Trusted HealthCare Partner
+        </h2>
       </div>
-      <div className="flex my-auto gap-5">
-        {NavbarDatas.map((nav, index) => (
-          <a
-            className={`nav-link ${activeLink === nav.link ? "active-nav" : ""}`}
-            href={nav.link}
-            key={index}
-            onClick={() => onLinkClick(nav.link)}
-          >
-            <HackerEffectText initialValue={nav.text}>
-              <span>{nav.text}</span>
-            </HackerEffectText>
-          </a>
-        ))}
-      </div>
+
       <div className="flex gap-4">
         <button className="bg-white flex gap-3 hover:bg-white/90 transition-all px-4 py-2 text-sm rounded-md font-medium my-auto">
-          Consultar certificação <FaArrowRight className="my-auto " />
+          Katombela Demo <FaCaretDown className="my-auto " />
         </button>
-        <button className="bg-primary flex gap-3 hover:bg-primary/90 transition-all px-4 py-2 text-sm rounded-md font-medium my-auto">
-          Academia <FaArrowRight className="my-auto " />
+        <button className="ms-[2rem] cursor-pointer border border-transparent hover:border-white transition-all  py-[.4rem] rounded-full px-[.4rem] bg-white/40 my-auto">
+          <BsBell className="my-auto  text-2xl text-white" />
         </button>
+        <div className="flex cursor-pointer border border-transparent hover:border-white transition-all p-1.5 gap-1 rounded-full bg-white/40">
+          <FaUserCircle className="my-auto text-2xl text-white" /> 
+          <span className="my-auto text-sm text-white font-semibold">Dr. João Katombela</span>
+          <BsCaretDown className="mt-1.5 text-white me-1" />
+        </div>
       </div>
     </div>
   );

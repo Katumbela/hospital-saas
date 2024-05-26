@@ -24,14 +24,14 @@ export function InputHackyOff({
 }: IHProps) {
   return (
     <div
-      className={`${divClass} input border-2 focus-within:border-primary border-secondary py-2 px-4 rounded-xl`}
+      className={`${divClass}  border focus-within:border-white border-white py-2 px-4 rounded-lg`}
     >
       {LeftIcon && (isLoading ? <FaSpinner /> : <LeftIcon />)}
       <input
         {...props}
         type="email"
         placeholder={placeholder}
-        className={`${className} my-auto text-black bg-transparent outline-none px-2 py-1 `}
+        className={`${className} input my-auto text-black bg-transparent outline-none px-2 py-1 `}
         disabled={isLoading}
         {...props}
       />
