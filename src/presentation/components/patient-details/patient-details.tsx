@@ -1,9 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { dummyData } from "../../../domain/config/patient-data";
 import { Layout } from "../layout/layout";
 import { NavBar } from "../navbar/navbar";
 import { FaArrowLeft, FaPlus } from "react-icons/fa";
+import { set } from "rsuite/esm/internals/utils/date";
+import { IPatientData } from "../../../interfaces/patient/patient";
 
 interface PatientDetailsProps {
   // Define a interface para os detalhes do paciente
@@ -23,6 +25,8 @@ interface PatientDetailsProps {
 
 const PatientDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+
+  const navigate = useNavigate();
   //const history = useHistory();
 
   // Função para buscar os detalhes do paciente com base no ID
@@ -30,20 +34,21 @@ const PatientDetails: React.FC = () => {
     return dummyData.find((patient) => patient.id === id);
   };
 
-  // Busca os detalhes do paciente com base no ID fornecido na URL
   const patientDetails = findPatientById(id);
 
   /*
   const handleStartConsultation = () => {
-    // Você pode fazer qualquer coisa que desejar aqui, como redirecionar para outra página
-    // Neste exemplo, estou redirecionando de volta para a página anterior
-    //history.goBack();
+   //history.goBack();
   };
 */
   if (!patientDetails) {
     // Se não encontrar o paciente com o ID fornecido, renderiza uma mensagem de erro
     return <div>Patient not found!</div>;
   }
+
+  const handleBack = () => {
+    navigate(`/admin`);
+  };
 
   return (
     <>
@@ -52,7 +57,7 @@ const PatientDetails: React.FC = () => {
         <Layout>
           <div>
             <div className="pe-7 py-8">
-              <div onClick={() => set} className="flex gap-4">
+              <div onClick={handleBack} className="cursor-pointer flex gap-4">
                 <FaArrowLeft className="my-auto text-xl" />{" "}
                 <h1 className="my-auto text-3xl font-bold ">Patient Details</h1>
               </div>
