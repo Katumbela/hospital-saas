@@ -47,15 +47,6 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-4">
-        <span>Showing {indexOfFirstEntry + 1} to {Math.min(indexOfLastEntry, data.length)} of {data.length} entries</span>
-        <select onChange={handleChangeEntriesPerPage} value={entriesPerPage}>
-          <option value={5}>5</option>
-          <option value={10}>10</option>
-          <option value={15}>15</option>
-          <option value={20}>20</option>
-        </select>
-      </div>
       <table className="text-start text-sm text-surface table-fixed w-full">
         <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
           <tr className="bg-violett/10">
@@ -129,8 +120,19 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
           ))}
         </tbody>
       </table>
-      <div className="flex justify-between items-center mt-4">
-        <button 
+      <div className="flex justify-between items-center mt-4 px-4">
+        
+      <div className="flex justify-between items-center mb-4">
+        <span>Showing {indexOfFirstEntry + 1} to {Math.min(indexOfLastEntry, data.length)} of {data.length} entries</span>
+        <select className="bg-violett/20" onChange={handleChangeEntriesPerPage} value={entriesPerPage}>
+          <option value={5}>5</option>
+          <option value={10}>10</option>
+          <option value={15}>15</option>
+          <option value={20}>20</option>
+        </select>
+      </div>
+       <div className="flex  justify-between items-center mb-4">
+       <button 
           onClick={() => handlePageChange(currentPage - 1)} 
           disabled={currentPage === 1}
           className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
@@ -145,6 +147,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
         >
           Next
         </button>
+       </div>
       </div>
     </div>
   );
