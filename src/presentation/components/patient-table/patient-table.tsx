@@ -219,7 +219,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-4 text-xs py-2active:bg-violett/80 active:text-white bg-gray-200 rounded-lg disabled:opacity-50"
+            className="px-4 text-xs py-2 active:bg-violett/80 active:text-white bg-gray-200 rounded-lg disabled:opacity-50"
           >
             Previous
           </button>
