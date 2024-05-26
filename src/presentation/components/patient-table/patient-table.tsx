@@ -173,7 +173,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                   <button
                     className={`${getStatusClass(
                       row.status
-                    )} w-[6.5rem] py-1 px-4 font-semibold flex gap-2 rounded-full text-center justify-center`}
+                    )} w-[6.5rem] click py-1 px-4 font-semibold flex gap-2 rounded-full text-center justify-center`}
                     onClick={() => toggleDropdown(index)}
                   >
                     <span className="my-auto">{row.status}</span>
@@ -218,7 +218,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                   </span>
                   <div
                     onClick={() => toggleDropdownOption(index)}
-                    className={` ${
+                    className={`click ${
                       openOptionsIndex === index && "bg-violett/80 text-white"
                     } relative hover:bg-violett/10 rounded-md cursor-pointer hover:text-violett active:bg-violett active:text-white transiton-all grid`}
                   >
