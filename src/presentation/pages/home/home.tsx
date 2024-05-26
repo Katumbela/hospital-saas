@@ -2,6 +2,7 @@ import { NavBar } from "../../components";
 import { Layout } from "../../components/layout/layout";
 
 export function HomePage() {
+  document.title = ' Admin Page | TATVA SOFTWARE'
   return (
     <>
       <div className="hidden lg:block">

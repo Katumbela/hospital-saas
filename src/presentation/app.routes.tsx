@@ -16,8 +16,8 @@ export function AppRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin" element={<HomePage />} />
+        <Route path="/" element={<LoginPage />} />
       </Routes>
     </>
   );
