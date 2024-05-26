@@ -1,7 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import { HomePage, LoginPage } from "./pages";
-import { useState, useEffect } from "react";
-import { Preloader } from "./components";
 
 export function AppRoutes() {
   
