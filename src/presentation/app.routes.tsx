@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { Preloader } from "./components";
 
 export function AppRoutes() {
-  const [isLoading, setIsLoading] = useState(true);
+  
+  
+  /*const [isLoading, setIsLoading] = useState(true);
   // Configurando cookies úteis para SEO e desempenho
 
   useEffect(() => {
@@ -12,7 +14,7 @@ export function AppRoutes() {
       setIsLoading(false);
     }, 4000);
   }, []);
-
+*/
   return (
     <>
       <Routes>

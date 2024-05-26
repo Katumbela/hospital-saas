@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
-import { logos } from "../../../utils/image-exporter";
-import { FaArrowRight, FaBell, FaUser, FaUserCircle } from "react-icons/fa";
-import { HackerEffectText } from "@nekzus/react-hacker-effect";
+import { FaUserCircle } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
-import { NavbarDatas } from "../../../domain/config/navbar-config";
 import { FaCaretDown } from "react-icons/fa6";
 import { BsBell, BsCaretDown } from "react-icons/bs";
 
@@ -14,7 +11,7 @@ export type NavBarContentProps = {
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
+  //const [activeLink, setActiveLink] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +28,11 @@ export function NavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  /*
   const handleClick = (link: string) => {
     setActiveLink(link);
   };
-
+*/
   return (
     <>
       <AnimatePresence>
@@ -50,11 +47,11 @@ export function NavBar() {
               isScrolled && "shadow-md"
             } fixed top-0 bg-anc z-50 left-0 right-0 py-3  `}
           >
-            <NavBarContent activeLink={activeLink} onLinkClick={handleClick} />
+            <NavBarContent />
           </motion.div>
         ) : (
           <div key="default-navbar" className="relative  py-3 bg-anc">
-            <NavBarContent activeLink={activeLink} onLinkClick={handleClick} />
+            <NavBarContent />
           </div>
         )}
       </AnimatePresence>
@@ -83,8 +80,10 @@ function NavBarContent() {
           <BsBell className="my-auto  text-2xl text-white" />
         </button>
         <div className="flex cursor-pointer border border-transparent hover:border-white transition-all p-1.5 gap-1 rounded-full bg-white/40">
-          <FaUserCircle className="my-auto text-2xl text-white" /> 
-          <span className="my-auto text-sm text-white font-semibold">Dr. João Katombela</span>
+          <FaUserCircle className="my-auto text-2xl text-white" />
+          <span className="my-auto text-sm text-white font-semibold">
+            Dr. João Katombela
+          </span>
           <BsCaretDown className="mt-1.5 text-white me-1" />
         </div>
       </div>
