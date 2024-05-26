@@ -7,13 +7,11 @@ export function HomePage() {
     <>
       <div className="hidden lg:block">
         <NavBar />
-        <Layout>
-          <div className="mx-auto h-[.4rem] w-[15%] rounded-full bg-primary relative"></div>
-          <div className="content">
+        <Layout >
+           <div className="content p-6">
             <h1 className="text-3xl font-bold mb-4">Main Content</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              imperdiet...
+             Clique no menu lateral para começar
             </p>
             {/* Adicione mais conteúdo aqui para demonstrar a rolagem */}
           </div>

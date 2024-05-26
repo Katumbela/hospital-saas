@@ -1,18 +1,13 @@
-import {
-  BsCalendar2,
-} from "react-icons/bs";
-import {
-  FaCaretDown,
-  FaPlus,
-  FaRegListAlt,
-  FaSearch,
-} from "react-icons/fa";
+import { BsCalendar2 } from "react-icons/bs";
+import { FaCaretDown, FaPlus, FaRegListAlt, FaSearch } from "react-icons/fa";
 import { dummyData } from "../../../domain/config/patient-data";
 import { PatientTable } from "../patient-table/patient-table";
-
-export function DoctorDashboard() {
+export type DRProp = {
+  setSelectedItem: (state: string) => void;
+};
+export function DoctorDashboard({ setSelectedItem }: DRProp) {
   return (
-    <div className="">
+    <div className="bg-white">
       <div className="flex py-3 px-3 justify-between">
         <div className="flex gap-4">
           <span className="flex text-sm gap-3 my-auto font-semibold">
@@ -59,9 +54,8 @@ export function DoctorDashboard() {
         </div>
       </div>
       <br />
-      
-      <PatientTable data={dummyData} />
 
+      <PatientTable setSelectedItem={setSelectedItem} data={dummyData} />
     </div>
   );
 }

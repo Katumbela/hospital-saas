@@ -5,8 +5,11 @@ import { FaHome, FaFilter, FaTrash, FaRegEdit } from "react-icons/fa";
 import { BsCaretDown, BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
 import { IPatientData } from "../../../interfaces/patient/patient";
 
+import { useNavigate } from "react-router-dom";
+
 interface PatientTableProps {
   data: IPatientData[];
+  setSelectedItem: (state: string) => void;
 }
 
 const getStatusClass = (status: string) => {
@@ -26,7 +29,10 @@ const getStatusClass = (status: string) => {
   }
 };
 
-export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
+export const PatientTable: React.FC<PatientTableProps> = ({
+  setSelectedItem: setSelectedMenu,
+  data,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(5);
   const [patientData, setPatientData] = useState(data);
@@ -35,6 +41,8 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
   );
 
   const [openOptionsIndex, setOpenOptionsIndex] = useState<number | null>(null);
+
+  const navigate = useNavigate();
 
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
@@ -68,8 +76,13 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
     setOpenOptionsIndex(openOptionsIndex === index ? null : index);
   };
 
+  const handleStartConsultation = (patient: IPatientData) => {
+    navigate(`/patient/${patient.id}`);
+    setSelectedMenu("");
+  };
+
   return (
-    <div>
+    <div className="">
       <table className="text-start text-sm text-surface table-fixed w-full">
         <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
           <tr className="bg-violett/10">
@@ -120,7 +133,10 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
         </thead>
         <tbody>
           {currentEntries.map((row, index) => (
-            <tr key={index} className="border-b min-full border-gray-300">
+            <tr
+              key={index}
+              className="border-b hover:bg-slate-100/80 transition-all font-medium min-full border-gray-300"
+            >
               <td
                 scope="col"
                 className="whitespace-nowrap px-6 py-4 font-bold text-md"
@@ -193,7 +209,10 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
               </td>
               <td className="whitespace-nowrap px-2 py-4">
                 <div className="flex gap-8">
-                  <span className="border-2 w-[9rem] flex gap-2 items-center cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs text-violett font-semibold rounded-lg px-2 py-1">
+                  <span
+                    onClick={() => handleStartConsultation(row)}
+                    className="border-2 w-[9rem] flex gap-2 items-center cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs text-violett font-semibold rounded-lg px-2 py-1"
+                  >
                     <BsFilePerson className="text-xl" />
                     <span className="my-auto">Start consultation</span>
                   </span>

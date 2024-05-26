@@ -10,7 +10,7 @@ import {
   BsTrophy,
 } from "react-icons/bs";
 import { FaBed } from "react-icons/fa";
-import { DoctorDashboard } from "../doctor-dash/doctor-dash";
+import { DoctorDashboard } from "../doctor-dash/doctor-dash"; 
 
 interface SidebarProps {
   onSelect: (item: string) => void;
@@ -143,14 +143,14 @@ interface LayoutProps {
 }
 
 export function Layout({ children }: LayoutProps) {
-  const [selectedItem, setSelectedItem] = useState("dashboard");
+  const [selectedItem, setSelectedItem] = useState("");
 
   const renderContent = () => {
     switch (selectedItem) {
       case "practices":
         return <div>Conteudo for My Practice</div>;
       case "dashboard":
-        return <DoctorDashboard />;
+        return <DoctorDashboard setSelectedItem={setSelectedItem}  />;
       case "appointments":
         return <div>Conteudo for All Appointments</div>;
       case "opd-bill":
@@ -170,11 +170,11 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="flex gap-5 h-screen">
-      {/* Sidebar */}
+      {/* Sidebar */} 
       <Sidebar onSelect={setSelectedItem} />
 
       {/* Main Content Area */}
-      <div className="flex-1 mt-3 h-[calc(100vh-6rem)] mb-10 bg-white me-4 overflow-y-auto">
+      <div className="flex-1 mt-3 h-[calc(100vh-6rem)] mb-10 bg-whitee me-4 overflow-y-auto">
         {renderContent()}
       </div>
     </div>
