@@ -30,6 +30,9 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(5);
   const [patientData, setPatientData] = useState(data);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
+    null
+  );
 
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
@@ -37,7 +40,9 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
 
   const totalPages = Math.ceil(patientData.length / entriesPerPage);
 
-  const handleChangeEntriesPerPage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeEntriesPerPage = (
+    e: React.ChangeEvent<HTMLSelectElement>
+  ) => {
     setEntriesPerPage(Number(e.target.value));
     setCurrentPage(1); // Reset to first page whenever entries per page changes
   };
@@ -50,27 +55,34 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
     const updatedData = [...patientData];
     updatedData[index].status = newStatus;
     setPatientData(updatedData);
+    setOpenDropdownIndex(null); // Close dropdown after status change
+  };
+
+  const toggleDropdown = (index: number) => {
+    setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-4">
-        <span>Showing {indexOfFirstEntry + 1} to {Math.min(indexOfLastEntry, patientData.length)} of {patientData.length} entries</span>
-        <select onChange={handleChangeEntriesPerPage} value={entriesPerPage}>
-          <option value={5}>5</option>
-          <option value={10}>10</option>
-          <option value={15}>15</option>
-          <option value={20}>20</option>
-        </select>
-      </div>
       <table className="text-start text-sm text-surface table-fixed w-full">
         <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
           <tr className="bg-violett/10">
-            <th scope="col" className="px-2 w-20 py-4">NO #</th>
-            <th scope="col" className="px-2 text-start w-[11rem] py-2">Patient Details</th>
-            <th scope="col" className="px-2 py-2 w-[6rem] text-start">DCB</th>
-            <th scope="col" className="px-2 w-[4.5rem] py-2 text-start">Gender</th>
-            <th scope="col" className="px-2 text-violett w-[6.6rem] py-2 text-start">
+            <th scope="col" className="px-2 w-20 py-4">
+              NO #
+            </th>
+            <th scope="col" className="px-2 text-start w-[11rem] py-2">
+              Patient Details
+            </th>
+            <th scope="col" className="px-2 py-2 w-[6rem] text-start">
+              DCB
+            </th>
+            <th scope="col" className="px-2 w-[4.5rem] py-2 text-start">
+              Gender
+            </th>
+            <th
+              scope="col"
+              className="px-2 text-violett w-[6.6rem] py-2 text-start"
+            >
               <span className="flex gap-2">
                 <span>Case</span>
                 <div className="border border-violett rounded-sm p-[2.5px] my-auto">
@@ -78,9 +90,15 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
                 </div>
               </span>
             </th>
-            <th scope="col" className="px-2 w-[8.5rem] py-2 text-start">Category</th>
-            <th scope="col" className="px-2 w-[7rem] py-2 text-start">Referred By</th>
-            <th scope="col" className="px-2 w-[6rem] py-2 text-start">Time</th>
+            <th scope="col" className="px-2 w-[8.5rem] py-2 text-start">
+              Category
+            </th>
+            <th scope="col" className="px-2 w-[7rem] py-2 text-start">
+              Referred By
+            </th>
+            <th scope="col" className="px-2 w-[6rem] py-2 text-start">
+              Time
+            </th>
             <th scope="col" className="px-2 w-[10rem] py-2 text-start">
               <span className="flex gap-2">
                 <span>Status</span>
@@ -89,20 +107,31 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
                 </div>
               </span>
             </th>
-            <th scope="col" className="px-2 py-2 text-start">Action</th>
+            <th scope="col" className="px-2 py-2 text-start">
+              Action
+            </th>
           </tr>
         </thead>
         <tbody>
           {currentEntries.map((row, index) => (
             <tr key={index} className="border-b min-full border-gray-300">
-              <td scope="col" className="whitespace-nowrap px-6 py-4 font-bold text-md">{row.no}</td>
+              <td
+                scope="col"
+                className="whitespace-nowrap px-6 py-4 font-bold text-md"
+              >
+                {row.no}
+              </td>
               <td className="whitespace-nowrap w-[8rem] text-start px-2 py-4">
                 <span className="flex gap-2 items-center">
                   <FaHome className="text-xl text-purple-600" />
                   <span className="flex flex-col">
-                    <span className="text-violett font-semibold">{row.name}</span>
+                    <span className="text-violett font-semibold">
+                      {row.name}
+                    </span>
                     <span className="text-xs">{row.id}</span>
-                    <span className="text-purple-600 font-extrabold">{row.affiliation}</span>
+                    <span className="text-purple-600 font-extrabold">
+                      {row.affiliation}
+                    </span>
                   </span>
                 </span>
               </td>
@@ -120,24 +149,40 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
               <td className="whitespace-nowrap px-2 py-4">
                 <div className="relative">
                   <button
-                    className={`${getStatusClass(row.status)} w-[6.5rem] py-1 px-4 font-semibold flex gap-2 rounded-full text-center justify-center`}
+                    className={`${getStatusClass(
+                      row.status
+                    )} w-[6.5rem] py-1 px-4 font-semibold flex gap-2 rounded-full text-center justify-center`}
+                    onClick={() => toggleDropdown(index)}
                   >
                     <span className="my-auto">{row.status}</span>
                     <BsCaretDown className="mt-1" />
                   </button>
-                  <div className="absolute mt-1 bg-white shadow-lg rounded w-[6.5rem] z-10">
-                    <ul>
-                      {["Queue", "In Progress", "Completed", "Cancelled", "Pending"].map((status) => (
-                        <li
-                          key={status}
-                          className="cursor-pointer py-1 px-2 hover:bg-gray-200"
-                          onClick={() => handleStatusChange(indexOfFirstEntry + index, status)}
-                        >
-                          {status}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  {openDropdownIndex === index && (
+                    <div className="absolute mt-1 bg-white shadow-lg rounded w-[6.5rem] z-10">
+                      <ul>
+                        {[
+                          "Queue",
+                          "In Progress",
+                          "Completed",
+                          "Cancelled",
+                          "Pending",
+                        ].map((status) => (
+                          <li
+                            key={status}
+                            className="cursor-pointer py-1 px-2 hover:bg-gray-200"
+                            onClick={() =>
+                              handleStatusChange(
+                                indexOfFirstEntry + index,
+                                status
+                              )
+                            }
+                          >
+                            {status}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </td>
               <td className="whitespace-nowrap px-2 py-4">
@@ -153,22 +198,46 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
           ))}
         </tbody>
       </table>
-      <div className="flex justify-between items-center mt-4">
-        <button 
-          onClick={() => handlePageChange(currentPage - 1)} 
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
-        >
-          Previous
-        </button>
+      <div className="flex justify-between items-center mt-4 px-4">
+        <div className="flex justify-between items-center mb-4">
+          <span className="me-4">
+            Showing {indexOfFirstEntry + 1} to{" "}
+            {Math.min(indexOfLastEntry, data.length)} of {data.length} entries{" "}
+          </span>
+          <select
+            className="bg-violett/20 px-2 py-2 rounded-md active:bg-violett/70 transition-all "
+            onChange={handleChangeEntriesPerPage}
+            value={entriesPerPage}
+          >
+            <option value={5}>5</option>
+            <option value={10}>10</option>
+            <option value={15}>15</option>
+            <option value={20}>20</option>
+          </select>
+        </div>
+        <div className="flex  justify-between items-center mb-4">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="px-4 text-xs py-2active:bg-violett/80 active:text-white bg-gray-200 rounded-lg disabled:opacity-50"
+          >
+            Previous
+          </button>
+          {/*
+
         <span>Page {currentPage} of {totalPages}</span>
-        <button 
-          onClick={() => handlePageChange(currentPage + 1)} 
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
-        >
-          Next
-        </button>
+            */}
+          <span className="px-3  py-2 rounded-md mx-2 bg-violett/90 text-white font-bold text-md">
+            {currentPage}
+          </span>
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="px-4 text-xs active:bg-violett/80 active:text-white py-2 bg-gray-200 rounded-lg disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
