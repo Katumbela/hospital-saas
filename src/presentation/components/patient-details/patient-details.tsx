@@ -78,7 +78,7 @@ const PatientDetails: React.FC = () => {
                     {patientDetails.gender} - {patientDetails.id}
                   </h2>
                 </div>
-                <div className="flex bg-violett/70 px-6 rounded-md text-lg font-semibold  text-white gap-3">
+                <div className="flex bg-violett/70 hover:bg-violett/90 transition-all cursor-pointer px-6 rounded-md text-lg font-semibold  text-white gap-3">
                   <FaPlus className="my-auto" />{" "}
                   <span className="my-auto">Add Prescription</span>
                 </div>
