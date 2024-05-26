@@ -1,5 +1,17 @@
-import { BsCalendar2 } from "react-icons/bs";
-import { FaCaretDown, FaPlus, FaRegListAlt, FaSearch } from "react-icons/fa";
+import {
+  BsCalendar2,
+  BsCaretDown,
+  BsFilePerson,
+  BsPersonDash,
+  BsThreeDotsVertical,
+} from "react-icons/bs";
+import {
+  FaCaretDown,
+  FaHome,
+  FaPlus,
+  FaRegListAlt,
+  FaSearch,
+} from "react-icons/fa";
 
 export function DoctorDashboard() {
   return (
@@ -50,9 +62,9 @@ export function DoctorDashboard() {
         </div>
       </div>
       <br />
-      <table className="table table-fixed w-full">
+      <table className="  table-fixed w-full">
         <thead className="">
-          <tr className="px-3 bg-violett/10  justify-between">
+          <tr className="px-3 bg-violett/10 ">
             <th className="py-2">NO #</th>
             <th className="py-3">Patient Details</th>
             <th className="py-3">DCB</th>
@@ -65,8 +77,44 @@ export function DoctorDashboard() {
             <th className="py-3">Action</th>
           </tr>
         </thead>
-        <tbody>
-            
+        <tbody className="">
+          <tr className="border-b px-3   ">
+            <td className="py-3">01</td>
+            <td className="py-3 flex gap-4">
+              <FaHome className="text-xl text-purple-600 my-auto" />
+              <h1 className="flex flex-col">
+                <span className="text-violett font-semibold">Risabh Sahu</span>
+                <span className="text-xs">02344</span>
+                <span className="text-purple-600 font-extrabold">my Tatva</span>
+              </h1>
+            </td>
+
+            <td className="py-3 flex flex-col">
+              <span>22/05/2024</span> <span className="text-sm">23 days</span>
+            </td>
+            <td className="py-3">New</td>
+            <td className="py-3"></td>
+            <td className="py-3"></td>
+            <td className="py-3">03:20 PM</td>
+
+            <td className="py-3">
+              <div className="bg-violett my-auto justify-center py-1 px-3 font-semibold text-white flex gap-2 rounded-full mx-auto text-center">
+                <span className="my-auto">Queue</span>
+                <BsCaretDown className="mt-1.5 text-white " />
+              </div>
+            </td>
+
+            <td className="py-3">
+              <div className="border-2 flex gap-2 my-auto cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs   text-violett font-semibold rounded-lg px-2 py-1">
+                <BsFilePerson className="text-xl" />
+                <span className="my-auto">Start consultation</span>
+              </div>
+            </td>
+
+            <td className="py-3">
+              <BsThreeDotsVertical className="text-2xl" />
+            </td>
+          </tr>
         </tbody>
       </table>
       doctor dashboard <p>Welcome Dr. katombela</p>
