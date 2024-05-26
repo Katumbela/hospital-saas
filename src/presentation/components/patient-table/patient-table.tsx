@@ -1,7 +1,7 @@
 // PatientTable.tsx
 
 import React, { useState } from "react";
-import { FaHome, FaFilter } from "react-icons/fa";
+import { FaHome, FaFilter, FaTrash, FaRegEdit } from "react-icons/fa";
 import { BsCaretDown, BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
 import { IPatientData } from "../../../interfaces/patient/patient";
 
@@ -34,6 +34,8 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
     null
   );
 
+  const [openOptionsIndex, setOpenOptionsIndex] = useState<number | null>(null);
+
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
   const currentEntries = patientData.slice(indexOfFirstEntry, indexOfLastEntry);
@@ -60,6 +62,10 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
 
   const toggleDropdown = (index: number) => {
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
+  };
+
+  const toggleDropdownOption = (index: number) => {
+    setOpenOptionsIndex(openOptionsIndex === index ? null : index);
   };
 
   return (
@@ -191,7 +197,26 @@ export const PatientTable: React.FC<PatientTableProps> = ({ data }) => {
                     <BsFilePerson className="text-xl" />
                     <span className="my-auto">Start consultation</span>
                   </span>
-                  <BsThreeDotsVertical className="text-2xl my-auto" />
+                  <div
+                    onClick={() => toggleDropdownOption(index)}
+                    className={` ${
+                      openOptionsIndex === index && "bg-violett/80 text-white"
+                    } relative hover:bg-violett/10 rounded-md cursor-pointer hover:text-violett active:bg-violett active:text-white transiton-all grid`}
+                  >
+                    <BsThreeDotsVertical className="text-2xl my-auto" />
+                    {openOptionsIndex === index && (
+                      <div className="absolute text-dark right-0 top-7 py-2 border  mt-1 bg-white shadow-lg rounded w-[6.5rem] z-50">
+                        <ul>
+                          <li className="flex gap-2 hover:bg-slate-100 px-3 ">
+                            <FaTrash className="my-auto my-2 text-sm" /> Delete
+                          </li>
+                          <li className="flex gap-2 hover:bg-slate-100 px-3 my-2">
+                            <FaRegEdit className="my-auto text-sm" /> Edit
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </td>
             </tr>
