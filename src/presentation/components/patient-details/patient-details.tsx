@@ -55,6 +55,8 @@ const PatientDetails: React.FC = () => {
     navigate(`/admin`);
   };
 
+  document.title = patientDetails.name +' Details | TATVACARE SOFTWARE '
+
   return (
     <>
       <div>
