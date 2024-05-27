@@ -7,6 +7,7 @@ import {
   FaTrash,
   FaRegEdit,
   FaAngleDown,
+  FaAngleUp,
 } from "react-icons/fa";
 import { BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
 import { IPatientData } from "../../../interfaces/patient/patient";
@@ -183,7 +184,11 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                     onClick={() => toggleDropdown(index)}
                   >
                     <span className="my-auto text-xs ">{row.status}</span>
-                    <FaAngleDown className="my-auto text-white text-md" />
+                    {openDropdownIndex === index ? (
+                      <FaAngleUp className="my-auto text-md" />
+                    ) : (
+                      <FaAngleDown className="my-auto text-md" />
+                    )}
                   </button>
                   {openDropdownIndex === index && (
                     <div className="absolute mt-1 bg-white shadow-lg rounded w-[6.5rem] z-10">
