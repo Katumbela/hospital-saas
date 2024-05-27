@@ -1,8 +1,14 @@
 // PatientTable.tsx
 
 import React, { useState } from "react";
-import { FaHome, FaFilter, FaTrash, FaRegEdit } from "react-icons/fa";
-import { BsCaretDown, BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
+import {
+  FaHome,
+  FaFilter,
+  FaTrash,
+  FaRegEdit,
+  FaAngleDown,
+} from "react-icons/fa";
+import { BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
 import { IPatientData } from "../../../interfaces/patient/patient";
 
 import { useNavigate } from "react-router-dom";
@@ -118,7 +124,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
             <th scope="col" className="px-2 w-[6rem] py-2 text-start">
               Time
             </th>
-            <th scope="col" className="px-2 w-[10rem] py-2 text-start">
+            <th scope="col" className="px-2 w-[9rem] py-2 text-start">
               <span className="flex gap-2">
                 <span>Status</span>
                 <div className="border border-violett rounded-sm p-[2.5px] my-auto">
@@ -173,11 +179,11 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                   <button
                     className={`${getStatusClass(
                       row.status
-                    )} w-[5.5rem] click py-[3px] px-3 font-semibold flex gap-1 rounded-full text-center justify-center`}
+                    )} w-auto click py-[3px] px-3 font-semibold flex gap-1 rounded-full text-center justify-center`}
                     onClick={() => toggleDropdown(index)}
                   >
                     <span className="my-auto text-xs ">{row.status}</span>
-                    <BsCaretDown className="my-auto text-white text-md" />
+                    <FaAngleDown className="my-auto text-white text-md" />
                   </button>
                   {openDropdownIndex === index && (
                     <div className="absolute mt-1 bg-white shadow-lg rounded w-[6.5rem] z-10">
@@ -227,7 +233,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                       <div className="absolute text-dark right-0 top-7 py-2 border  mt-1 bg-white shadow-lg rounded w-[6.5rem] z-50">
                         <ul>
                           <li className="flex gap-2 px-3 hover:bg-slate-100 ">
-                            <FaTrash className="my-2 my-auto text-sm" /> Delete
+                            <FaTrash className="my-auto text-sm " /> Delete
                           </li>
                           <li className="flex gap-2 px-3 my-2 hover:bg-slate-100">
                             <FaRegEdit className="my-auto text-sm" /> Edit
