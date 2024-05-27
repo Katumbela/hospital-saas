@@ -17,13 +17,13 @@ const getStatusClass = (status: string) => {
     case "queue":
       return "bg-violett text-white";
     case "in progress":
-      return "status-in-progress";
+      return "status-in-progress  text-white";
     case "completed":
-      return "status-completed";
+      return "status-completed  text-white";
     case "cancelled":
-      return "status-cancelled";
+      return "status-cancelled  text-white";
     case "pending":
-      return "bg-gray-300";
+      return "bg-gray-300 text-dark";
     default:
       return "";
   }
@@ -173,7 +173,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                   <button
                     className={`${getStatusClass(
                       row.status
-                    )} w-[5.5rem] click py-[3px] px-4 font-semibold flex gap-1 rounded-full text-center justify-center`}
+                    )} w-[5.5rem] click py-[3px] px-3 font-semibold flex gap-1 rounded-full text-center justify-center`}
                     onClick={() => toggleDropdown(index)}
                   >
                     <span className="my-auto text-xs ">{row.status}</span>
