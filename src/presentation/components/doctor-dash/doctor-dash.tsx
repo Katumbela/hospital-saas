@@ -13,30 +13,30 @@ export function DoctorDashboard({ setSelectedItem }: DRProp) {
           <span className="flex gap-3 my-auto text-sm font-semibold">
             Today <FaAngleDown className="my-auto" />
           </span>
-          <div className="px-3 py-1 my-auto text-xs font-semibold text-white transition-all border-2 rounded-full cursor-pointer border-violett bg-violett/90">
+          <div className="px-2 py-1 my-auto text-xs font-semibold text-white transition-all border-2 rounded-full cursor-pointer border-violett bg-violett/90">
             My Appointments
           </div>
-          <div className="px-3 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
+          <div className="px-2 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
             All Appointments
           </div>
-          <div className="px-3 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
+          <div className="px-2 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
             Follow Up
           </div>
         </div>
         <div className="flex gap-5">
-          <div className="flex px-3 py-1 my-auto border-2 rounded-md">
+          <div className="flex px-2 py-1 my-auto border-2 rounded-md">
             <input
               type="text"
-              className="my-auto border-none outline-none"
+              className="my-auto text-sm border-none outline-none"
               placeholder="Search Name or Mobile"
             />
             <FaSearch className="my-auto text-sm text-gray-500 " />
           </div>
 
-          <div className="px-3 py-2 my-auto text-xs font-semibold transition-all border-2 rounded-lg cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
+          <div className="px-2 py-1.5 my-auto text-xs font-semibold transition-all border-2 rounded-lg cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
             My Availability
           </div>
-          <div className="flex gap-1 px-3 py-2 my-auto text-xs font-semibold text-white transition-all border-2 rounded-lg cursor-pointer hover:shadow-md bg-violett border-violett">
+          <div className="flex gap-1 px-2 my-auto text-xs font-semibold text-white transition-all border-2 rounded-lg cursor-pointer py-1.5 hover:shadow-md bg-violett border-violett">
             <FaPlus className="my-auto text-white" />
             <span className="my-auto">Add Appointment</span>
           </div>

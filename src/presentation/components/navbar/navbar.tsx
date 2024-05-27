@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaAngleDown, FaUserCircle } from "react-icons/fa";
-import { AnimatePresence, motion } from "framer-motion";
-import { FaCaretDown } from "react-icons/fa6";
-import { BsBell, BsCaretDown } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion"; 
+import { BsBell } from "react-icons/bs";
 
 export type NavBarContentProps = {
   activeLink: string;
