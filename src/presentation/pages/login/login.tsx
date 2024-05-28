@@ -10,7 +10,7 @@ export function LoginPage() {
             <h1 className="text-2xl font-bold text-white"> ANC Scheduler</h1>
           </center>
           <br />
-          <InputHackyOff className="text-white" placeholder="Username" />
+          <InputHackyOff className="text-white" placeholder="Usuario" />
           <br />
           <InputHackyOff className="text-white" placeholder="Password" />
           <br />

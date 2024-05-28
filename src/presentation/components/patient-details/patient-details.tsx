@@ -38,7 +38,7 @@ const PatientDetails: React.FC = () => {
     return undefined;
   };
 
-  // Busca os detalhes do paciente com base no ID fornecido na URL
+  
   const patientDetails = findPatientById(id);
 
   /*
@@ -46,6 +46,7 @@ const PatientDetails: React.FC = () => {
    //history.goBack();
   };
 */
+
   if (!patientDetails) {
     // Se não encontrar o paciente com o ID fornecido, renderiza uma mensagem de erro
     return <div>Patient not found!</div>;

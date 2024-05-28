@@ -68,16 +68,15 @@ function NavBarContent() {
         </h1>
         <div className="l w-[2px] h-[27px] my-auto bg-white"></div>
         <h2 className="text-white text-md my-auto font-semibold">
-          Your Trusted HealthCare Partner
+          Seu Parceiro Confiável de Saúde
         </h2>
       </div>
-
       <div className="flex gap-4">
         <button className="bg-white flex gap-3 hover:bg-white/90 transition-all px-4 py-2 text-sm rounded-md font-medium my-auto">
           Katombela Demo <FaCaretDown className="my-auto " />
         </button>
-        <button className="ms-[2rem] cursor-pointer border border-transparent hover:border-white transition-all  py-[.4rem] rounded-full px-[.4rem] bg-white/40 my-auto">
-          <BsBell className="my-auto  text-2xl text-white" />
+        <button className="ms-[2rem] cursor-pointer border border-transparent hover:border-white transition-all py-[.4rem] rounded-full px-[.4rem] bg-white/40 my-auto">
+          <BsBell className="my-auto text-2xl text-white" />
         </button>
         <div className="flex cursor-pointer border border-transparent hover:border-white transition-all p-1.5 gap-1 rounded-full bg-white/40">
           <FaUserCircle className="my-auto text-2xl text-white" />
