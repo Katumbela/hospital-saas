@@ -1,8 +1,15 @@
 // PatientTable.tsx
 
 import React, { useState } from "react";
-import { FaHome, FaFilter, FaTrash, FaRegEdit } from "react-icons/fa";
-import { BsCaretDown, BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
+import {
+  FaHome,
+  FaFilter,
+  FaTrash,
+  FaRegEdit,
+  FaAngleDown,
+  FaAngleUp,
+} from "react-icons/fa";
+import { BsFilePerson, BsThreeDotsVertical } from "react-icons/bs";
 import { IPatientData } from "../../../interfaces/patient/patient";
 
 import { useNavigate } from "react-router-dom";
@@ -17,13 +24,13 @@ const getStatusClass = (status: string) => {
     case "queue":
       return "bg-violett text-white";
     case "in progress":
-      return "status-in-progress";
+      return "status-in-progress  text-white";
     case "completed":
-      return "status-completed";
+      return "status-completed  text-white";
     case "cancelled":
-      return "status-cancelled";
+      return "status-cancelled  text-white";
     case "pending":
-      return "bg-gray-300";
+      return "bg-gray-300 text-dark";
     default:
       return "";
   }
@@ -83,13 +90,13 @@ export const PatientTable: React.FC<PatientTableProps> = ({
 
   return (
     <div className="">
-      <table className="text-start text-sm text-surface table-fixed w-full">
-        <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
+      <table className="w-auto text-sm table-fixed text-start text-surface">
+        <thead className="font-medium border-b border-neutral-200 dark:border-white/10">
           <tr className="bg-violett/10">
-            <th scope="col" className="px-2 w-20 py-4">
+            <th scope="col" className="px-2 py-4 w-[2rem]">
               NO #
             </th>
-            <th scope="col" className="px-2 text-start w-[11rem] py-2">
+            <th scope="col" className="px-2 text-start w-[10rem] py-2">
               Patient Details
             </th>
             <th scope="col" className="px-2 py-2 w-[6rem] text-start">
@@ -100,7 +107,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
             </th>
             <th
               scope="col"
-              className="px-2 text-violett w-[6.6rem] py-2 text-start"
+              className="px-2 text-violett w-[6rem] py-2 text-start"
             >
               <span className="flex gap-2">
                 <span>Case</span>
@@ -109,16 +116,16 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                 </div>
               </span>
             </th>
-            <th scope="col" className="px-2 w-[8.5rem] py-2 text-start">
+            <th scope="col" className="px-2 w-[8rem] py-2 text-start">
               Category
             </th>
-            <th scope="col" className="px-2 w-[7rem] py-2 text-start">
+            <th scope="col" className="px-2 w-[6.5rem] py-2 text-start">
               Referred By
             </th>
-            <th scope="col" className="px-2 w-[6rem] py-2 text-start">
+            <th scope="col" className="px-2 w-[5.5rem] py-2 text-start">
               Time
             </th>
-            <th scope="col" className="px-2 w-[10rem] py-2 text-start">
+            <th scope="col" className="px-2 w-[8.5rem] py-2 text-start">
               <span className="flex gap-2">
                 <span>Status</span>
                 <div className="border border-violett rounded-sm p-[2.5px] my-auto">
@@ -126,7 +133,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                 </div>
               </span>
             </th>
-            <th scope="col" className="px-2 py-2 text-start">
+            <th scope="col" className="w-[15rem] px-2 py-2 text-start">
               Action
             </th>
           </tr>
@@ -135,23 +142,23 @@ export const PatientTable: React.FC<PatientTableProps> = ({
           {currentEntries.map((row, index) => (
             <tr
               key={index}
-              className="border-b hover:bg-slate-100/80 transition-all font-medium min-full border-gray-300"
+              className="font-medium transition-all border-b border-gray-300 hover:bg-slate-100/80 min-full"
             >
               <td
                 scope="col"
-                className="whitespace-nowrap px-6 py-4 font-bold text-md"
+                className="px-6 py-4 font-bold whitespace-nowrap text-md"
               >
                 {row.no}
               </td>
               <td className="whitespace-nowrap w-[8rem] text-start px-2 py-4">
-                <span className="flex gap-2 items-center">
+                <span className="flex items-center gap-2">
                   <FaHome className="text-xl text-purple-600" />
                   <span className="flex flex-col">
-                    <span className="text-violett font-semibold">
+                    <span className="font-semibold text-violett">
                       {row.name}
                     </span>
                     <span className="text-xs">{row.id}</span>
-                    <span className="text-purple-600 font-extrabold">
+                    <span className="font-extrabold text-purple-600">
                       {row.affiliation}
                     </span>
                   </span>
@@ -163,21 +170,25 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                   <span className="text-sm">{row.days}</span>
                 </span>
               </td>
-              <td className="whitespace-nowrap px-2 py-4">{row.gender}</td>
-              <td className="whitespace-nowrap px-2 py-4">{row.case}</td>
-              <td className="whitespace-nowrap px-2 py-4">{row.category}</td>
-              <td className="whitespace-nowrap px-2 py-4">{row.referredBy}</td>
-              <td className="whitespace-nowrap px-2 py-4">{row.time}</td>
-              <td className="whitespace-nowrap px-2 py-4">
+              <td className="px-2 py-4 whitespace-nowrap">{row.gender}</td>
+              <td className="px-2 py-4 whitespace-nowrap">{row.case}</td>
+              <td className="px-2 py-4 whitespace-nowrap">{row.category}</td>
+              <td className="px-2 py-4 whitespace-nowrap">{row.referredBy}</td>
+              <td className="px-2 py-4 whitespace-nowrap">{row.time}</td>
+              <td className="px-2 py-4 whitespace-nowrap">
                 <div className="relative">
                   <button
                     className={`${getStatusClass(
                       row.status
-                    )} w-[6.5rem] click py-1 px-4 font-semibold flex gap-2 rounded-full text-center justify-center`}
+                    )} w-auto click py-[3px] px-3 font-semibold flex gap-1 rounded-full text-center justify-center`}
                     onClick={() => toggleDropdown(index)}
                   >
-                    <span className="my-auto">{row.status}</span>
-                    <BsCaretDown className="mt-1" />
+                    <span className="my-auto text-xs ">{row.status}</span>
+                    {openDropdownIndex === index ? (
+                      <FaAngleUp className="my-auto text-md" />
+                    ) : (
+                      <FaAngleDown className="my-auto text-md" />
+                    )}
                   </button>
                   {openDropdownIndex === index && (
                     <div className="absolute mt-1 bg-white shadow-lg rounded w-[6.5rem] z-10">
@@ -191,7 +202,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                         ].map((status) => (
                           <li
                             key={status}
-                            className="cursor-pointer py-1 px-2 hover:bg-gray-200"
+                            className="px-2 py-1 cursor-pointer hover:bg-gray-200"
                             onClick={() =>
                               handleStatusChange(
                                 indexOfFirstEntry + index,
@@ -207,7 +218,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                   )}
                 </div>
               </td>
-              <td className="whitespace-nowrap px-2 py-4">
+              <td className="px-2 py-4 whitespace-nowrap">
                 <div className="flex gap-8">
                   <span
                     onClick={() => handleStartConsultation(row)}
@@ -222,14 +233,14 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                       openOptionsIndex === index && "bg-violett/80 text-white"
                     } relative hover:bg-violett/10 rounded-md cursor-pointer hover:text-violett active:bg-violett active:text-white transiton-all grid`}
                   >
-                    <BsThreeDotsVertical className="text-2xl my-auto" />
+                    <BsThreeDotsVertical className="my-auto text-2xl" />
                     {openOptionsIndex === index && (
                       <div className="absolute text-dark right-0 top-7 py-2 border  mt-1 bg-white shadow-lg rounded w-[6.5rem] z-50">
                         <ul>
-                          <li className="flex gap-2 hover:bg-slate-100 px-3 ">
-                            <FaTrash className="my-auto my-2 text-sm" /> Delete
+                          <li className="flex gap-2 px-3 hover:bg-slate-100 ">
+                            <FaTrash className="my-auto text-sm " /> Delete
                           </li>
-                          <li className="flex gap-2 hover:bg-slate-100 px-3 my-2">
+                          <li className="flex gap-2 px-3 my-2 hover:bg-slate-100">
                             <FaRegEdit className="my-auto text-sm" /> Edit
                           </li>
                         </ul>
@@ -242,14 +253,14 @@ export const PatientTable: React.FC<PatientTableProps> = ({
           ))}
         </tbody>
       </table>
-      <div className="flex justify-between items-center mt-4 px-4">
-        <div className="flex justify-between items-center mb-4">
+      <div className="flex items-center justify-between px-4 mt-4">
+        <div className="flex items-center justify-between mb-4">
           <span className="me-4">
             Showing {indexOfFirstEntry + 1} to{" "}
             {Math.min(indexOfLastEntry, data.length)} of {data.length} entries{" "}
           </span>
           <select
-            className="bg-violett/20 px-2 py-2 rounded-md active:bg-violett/70 transition-all "
+            className="px-2 py-2 transition-all rounded-md bg-violett/20 active:bg-violett/70 "
             onChange={handleChangeEntriesPerPage}
             value={entriesPerPage}
           >
@@ -259,11 +270,11 @@ export const PatientTable: React.FC<PatientTableProps> = ({
             <option value={20}>20</option>
           </select>
         </div>
-        <div className="flex  justify-between items-center mb-4">
+        <div className="flex items-center justify-between mb-4">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="px-4 text-xs py-2 active:bg-violett/80 active:text-white bg-gray-200 rounded-lg disabled:opacity-50"
+            className="px-4 py-2 text-xs bg-gray-200 rounded-lg active:bg-violett/80 active:text-white disabled:opacity-50"
           >
             Previous
           </button>
@@ -271,13 +282,13 @@ export const PatientTable: React.FC<PatientTableProps> = ({
 
         <span>Page {currentPage} of {totalPages}</span>
             */}
-          <span className="px-3  py-2 rounded-md mx-2 bg-violett/90 text-white font-bold text-md">
+          <span className="px-3 py-2 mx-2 font-bold text-white rounded-md bg-violett/90 text-md">
             {currentPage}
           </span>
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="px-4 text-xs active:bg-violett/80 active:text-white py-2 bg-gray-200 rounded-lg disabled:opacity-50"
+            className="px-4 py-2 text-xs bg-gray-200 rounded-lg active:bg-violett/80 active:text-white disabled:opacity-50"
           >
             Next
           </button>

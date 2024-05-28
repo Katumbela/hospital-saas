@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaAngleDown, FaUserCircle } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
-import { FaCaretDown } from "react-icons/fa6";
-import { BsBell, BsCaretDown } from "react-icons/bs";
+import { BsBell } from "react-icons/bs";
+import { FaArrowRightFromBracket, FaGear } from "react-icons/fa6";
 
 export type NavBarContentProps = {
   activeLink: string;
@@ -50,7 +50,7 @@ export function NavBar() {
             <NavBarContent />
           </motion.div>
         ) : (
-          <div key="default-navbar" className="relative  py-3 bg-anc">
+          <div key="default-navbar" className="relative py-3 bg-anc">
             <NavBarContent />
           </div>
         )}
@@ -60,30 +60,88 @@ export function NavBar() {
 }
 
 function NavBarContent() {
+  const [itemClicked, setitemClicked] = useState("");
   return (
     <div className="flex justify-between containerr px-[2.5rem]">
-      <div className="logo flex gap-5">
-        <h1 className="font-bold my-auto text-white text-3xl georgia sans-serif">
+      <div className="flex gap-5 logo">
+        <h1 className="my-auto text-3xl font-bold text-white georgia sans-serif">
           TATVA CARE
         </h1>
         <div className="l w-[2px] h-[27px] my-auto bg-white"></div>
-        <h2 className="text-white text-md my-auto font-semibold">
-          Seu Parceiro Confiável de Saúde
+        <h2 className="my-auto font-semibold text-white text-md">
+          Your Trusted HealthCare Partner
         </h2>
       </div>
       <div className="flex gap-4">
-        <button className="bg-white flex gap-3 hover:bg-white/90 transition-all px-4 py-2 text-sm rounded-md font-medium my-auto">
-          Katombela Demo <FaCaretDown className="my-auto " />
-        </button>
-        <button className="ms-[2rem] cursor-pointer border border-transparent hover:border-white transition-all py-[.4rem] rounded-full px-[.4rem] bg-white/40 my-auto">
-          <BsBell className="my-auto text-2xl text-white" />
-        </button>
-        <div className="flex cursor-pointer border border-transparent hover:border-white transition-all p-1.5 gap-1 rounded-full bg-white/40">
-          <FaUserCircle className="my-auto text-2xl text-white" />
-          <span className="my-auto text-sm text-white font-semibold">
-            Dr. João Katombela
-          </span>
-          <BsCaretDown className="mt-1.5 text-white me-1" />
+        <div className="relative">
+          <button
+            onClick={() => setitemClicked(itemClicked === "demo" ? "" : "demo")}
+            className="flex gap-3 px-4 py-2 my-auto text-sm font-medium transition-all bg-white rounded-md hover:bg-white/90"
+          >
+            Katombela Demo <FaAngleDown className="mt-[5px] " />
+          </button>
+          {itemClicked === "demo" && (
+            <button className="absolute flex w-full gap-3 px-4 py-2 my-auto text-sm font-medium transition-all bg-purple-100 shadow-lg rounded-s hover:bg-purple-200">
+              Update to <b className="text-purple-800">PRO</b>
+            </button>
+          )}
+        </div>
+        <div className="relative">
+          <button
+            onClick={() => setitemClicked(itemClicked === "bell" ? "" : "bell")}
+            className={`ms-[2rem] click cursor-pointer border border-transparent hover:border-white transition-all  py-[.4rem] rounded-full px-[.4rem]  my-auto ${
+              itemClicked === "bell"
+                ? "bg-white text-purple-800"
+                : "text-white bg-white/40"
+            }`}
+          >
+            <BsBell className="my-auto text-2xl " />
+          </button>
+          {itemClicked === "bell" && (
+            <div className="absolute  top-[2.7rem] bg-white z-50 w-[14rem] right-0 p-3 shadow-xl">
+              <b>Notifications</b>
+              <p className="p-1 mt-2 text-xs rounded-sm bg-slate-200">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
+                porro perferendis!
+              </p>
+              <p className="p-1 mt-2 text-xs rounded-sm bg-slate-200">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
+                porro perferendis!
+              </p>
+              <p className="p-1 mt-2 text-xs rounded-sm bg-slate-200">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
+                porro perferendis!
+              </p>
+            </div>
+          )}
+        </div>
+
+        <div className="relative">
+          <div
+            onClick={() =>
+              setitemClicked(itemClicked === "profile" ? "" : "profile")
+            }
+            className="flex click cursor-pointer border border-transparent hover:border-white transition-all p-1.5 gap-1 rounded-full bg-white/40"
+          >
+            <FaUserCircle className="my-auto text-2xl text-white" />
+            <span className="my-auto text-sm font-semibold text-white">
+              Dr. João Katombela
+            </span>
+            <FaAngleDown className="mt-[7px] text-white me-1" />
+          </div>
+          {itemClicked === "profile" && (
+            <div className="absolute rounded-md bg-white top-[2.7rem] z-50 w-[14rem] right-0 p-3 shadow-xl">
+              <p className="py-1.5 px-2 mt-2 flex gap-2 text-sm rounded-sm hover:bg-slate-300 transition-all cursor-pointer bg-slate-200">
+                <FaUserCircle className="my-auto" /> View Profile
+              </p>
+              <p className="py-1.5 px-2 mt-2 flex gap-2 text-sm rounded-sm hover:bg-slate-300 transition-all cursor-pointer bg-slate-200">
+                <FaGear className="my-auto" /> Settings
+              </p>
+              <p className="py-1.5 px-2 mt-2 flex gap-2 text-sm rounded-sm hover:bg-slate-300 transition-all cursor-pointer bg-slate-200">
+              <FaArrowRightFromBracket className="my-auto" /> Logout
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

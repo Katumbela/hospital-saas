@@ -1,5 +1,5 @@
 import { BsCalendar2 } from "react-icons/bs";
-import { FaCaretDown, FaPlus, FaRegListAlt, FaSearch } from "react-icons/fa";
+import { FaAngleDown, FaPlus, FaRegListAlt, FaSearch } from "react-icons/fa";
 import { dummyData } from "../../../domain/config/patient-data";
 import { PatientTable } from "../patient-table/patient-table";
 export type DRProp = {
@@ -8,36 +8,37 @@ export type DRProp = {
 export function DoctorDashboard({ setSelectedItem }: DRProp) {
   return (
     <div className="bg-white">
-      <div className="flex py-3 px-3 justify-between">
+      <div className="flex justify-between px-3 py-3">
         <div className="flex gap-4">
-          <span className="flex text-sm gap-3 my-auto font-semibold">
-            Hoje <FaCaretDown className="my-auto" />
+          <span className="flex gap-3 my-auto text-sm font-semibold">
+            Today <FaAngleDown className="my-auto" />
           </span>
-          <div className="border-2 my-auto cursor-pointer transition-all border-violett text-xs bg-violett/90 text-white font-semibold rounded-full px-3 py-1">
-            Meus Compromissos
+          <div className="px-2 py-1 my-auto text-xs font-semibold text-white transition-all border-2 rounded-full cursor-pointer border-violett bg-violett/90">
+            My Appointments
           </div>
-          <div className="border-2 my-auto cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs text-violett font-semibold rounded-full px-3 py-1">
-            Todos os Compromissos
+          <div className="px-2 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
+            All Appointments
           </div>
-          <div className="border-2 my-auto cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs text-violett font-semibold rounded-full px-3 py-1">
-            Acompanhamento
+          <div className="px-2 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
+            Follow Up
           </div>
         </div>
         <div className="flex gap-5">
-          <div className="flex my-auto border-2 rounded-md px-3 py-1">
+          <div className="flex px-2 py-1 my-auto border-2 rounded-md">
             <input
               type="text"
-              className="outline-none border-none my-auto"
-              placeholder="Pesquisar Nome ou Telefone"
+              className="my-auto text-sm border-none outline-none"
+              placeholder="Search Name or Mobile"
             />
-            <FaSearch className="my-auto text-gray-500 text-sm " />
+            <FaSearch className="my-auto text-sm text-gray-500 " />
           </div>
-          <div className="border-2 my-auto cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs text-violett font-semibold rounded-lg px-3 py-2">
-            Minha Disponibilidade
+
+          <div className="px-2 py-1.5 my-auto text-xs font-semibold transition-all border-2 rounded-lg cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
+            My Availability
           </div>
-          <div className="border-2 flex gap-1 my-auto cursor-pointer hover:shadow-md bg-violett transition-all border-violett text-xs text-white font-semibold rounded-lg px-3 py-2">
-            <FaPlus className="text-white my-auto" />
-            <span className="my-auto">Adicionar Compromisso</span>
+          <div className="flex gap-1 px-2 my-auto text-xs font-semibold text-white transition-all border-2 rounded-lg cursor-pointer py-1.5 hover:shadow-md bg-violett border-violett">
+            <FaPlus className="my-auto text-white" />
+            <span className="my-auto">Add Appointment</span>
           </div>
           <div className="flex gap-2">
             <span className={"text-xs font-semibold my-auto"}>Ver como</span>

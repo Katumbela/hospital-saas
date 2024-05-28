@@ -9,6 +9,10 @@ body {
   overflow: hidden !important;
 }
 
+.z-100 {
+  z-index: 999999!important;
+}
+
 html,
 body {
   scroll-behavior: smooth;
