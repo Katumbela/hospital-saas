@@ -222,10 +222,10 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                 <div className="flex gap-8">
                   <span
                     onClick={() => handleStartConsultation(row)}
-                    className="border-2 w-[9rem] flex gap-2 items-center cursor-pointer hover:shadow-md hover:bg-violett/10 transition-all border-violett text-xs text-violett font-semibold rounded-lg px-2 py-1"
+                    className="border-2 w-[9rem] flex gap-2 items-center cursor-pointer hover:shadow-md hover:bg-violett hover:text-white transition-all border-violett text-xs text-violett font-semibold rounded-lg px-2 py-1"
                   >
                     <BsFilePerson className="text-xl" />
-                    <span className="my-auto">Start consultation</span>
+                    <span className="my-auto">Iniciar consulta</span>
                   </span>
                   <div
                     onClick={() => toggleDropdownOption(index)}

@@ -38,7 +38,6 @@ const PatientDetails: React.FC = () => {
     return undefined;
   };
 
-  
   const patientDetails = findPatientById(id);
 
   /*
@@ -56,7 +55,7 @@ const PatientDetails: React.FC = () => {
     navigate(`/admin`);
   };
 
-  document.title = patientDetails.name +' Details | TATVACARE SOFTWARE '
+  document.title = patientDetails.name + " Details | TATVACARE SOFTWARE ";
 
   return (
     <>
@@ -86,6 +85,79 @@ const PatientDetails: React.FC = () => {
                   <span className="my-auto">Add Prescription</span>
                 </div>
               </div>
+              <br />
+
+              <div className="flex justify-between">
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=13042&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=SvvAPZQ3Pvxe&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+                <div className="">
+                  {" "}
+                  <img
+                    src="https://img.icons8.com/?size=100&id=13075&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=TFa5dmzOAaDh&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=12053&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=Xzp9nZ481VTn&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=C8gfz6xPL7TZ&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+                <div className="">
+                  <img
+                    src="https://img.icons8.com/?size=100&id=rvCR1YF1VAgo&format=png&color=000000"
+                    alt=""
+                  />
+                  <h1 className="font-bold">Algum titulo</h1>
+                </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <center>
+                <h2 className="text-2xl font-bold">
+                  sem nenhum resumo de consulta
+                </h2>
+              </center>
+
+              <br />
+              <br />
             </div>
             {/*
 
