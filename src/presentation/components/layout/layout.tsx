@@ -2,15 +2,14 @@ import { ReactNode, useState } from "react";
 import {
   BsCalendar2Event,
   BsCapsule,
-  BsCaretDown,
   BsCast,
   BsDiagram2,
   BsPersonVideo2,
   BsReceipt,
   BsTrophy,
 } from "react-icons/bs";
-import { FaBed } from "react-icons/fa";
-import { DoctorDashboard } from "../doctor-dash/doctor-dash"; 
+import { FaAngleDown, FaBed } from "react-icons/fa";
+import { DoctorDashboard } from "../doctor-dash/doctor-dash";
 
 interface SidebarProps {
   onSelect: (item: string) => void;
@@ -37,7 +36,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
         >
           <div className="text-center">
             <BsPersonVideo2 className="mx-auto text-2xl" />
-            <span className="mt-2 text-sm font-semibold">My Practice</span>
+            <span className="mt-2 text-sm font-semibold"> Treinamentos</span>
           </div>
         </li>
         <li
@@ -63,7 +62,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
         >
           <div className="text-center">
             <BsCalendar2Event className="mx-auto text-2xl" />
-            <span className="mt-2 text-sm font-semibold">All Appointments</span>
+            <span className="mt-2 text-sm font-semibold">Compromissos</span>
           </div>
         </li>
         <li
@@ -89,7 +88,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
         >
           <div className="text-center">
             <FaBed className="mx-auto text-2xl" />
-            <span className="mt-2 text-sm font-semibold">All Patients</span>
+            <span className="mt-2 text-sm font-semibold">Pacientes</span>
           </div>
         </li>
         <li
@@ -102,7 +101,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
         >
           <div className="text-center">
             <BsCapsule className="mx-auto text-2xl" />
-            <span className="mt-2 text-sm font-semibold">Pharmacy</span>
+            <span className="mt-2 text-sm font-semibold">Farmácia</span>
           </div>
         </li>
         <li
@@ -116,7 +115,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
           <div className="text-center">
             <BsDiagram2 className="mx-auto text-2xl" />
             <span className="flex gap-2 mt-2 text-sm font-semibold">
-              IPD <BsCaretDown className="mt-1" />
+              IPD <FaAngleDown className="mt-1" />
             </span>
           </div>
         </li>
@@ -148,21 +147,21 @@ export function Layout({ children }: LayoutProps) {
   const renderContent = () => {
     switch (selectedItem) {
       case "practices":
-        return <div>Conteudo for My Practice</div>;
+        return <div>Conteúdo para Minha Prática</div>;
       case "dashboard":
-        return <DoctorDashboard setSelectedItem={setSelectedItem}  />;
+        return <DoctorDashboard setSelectedItem={setSelectedItem} />;
       case "appointments":
-        return <div>Conteudo for All Appointments</div>;
+        return <div>Conteúdo para Todos os Compromissos</div>;
       case "opd-bill":
-        return <div>Conteudo for OPD Billing</div>;
+        return <div>Conteúdo para Faturamento OPD</div>;
       case "patients":
-        return <div>Conteudo for All Patients</div>;
+        return <div>Conteúdo para Todos os Pacientes</div>;
       case "pharmacy":
-        return <div>Conteudo for Pharmacy</div>;
+        return <div>Conteúdo para Farmácia</div>;
       case "ipd":
-        return <div>Conteudo for IPD</div>;
+        return <div>Conteúdo para IPD</div>;
       case "tatva":
-        return <div>Conteudo for TatvaPodia</div>;
+        return <div>Conteúdo para TatvaPodia</div>;
       default:
         return children;
     }
@@ -170,7 +169,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="flex h-screen gap-5">
-      {/* Sidebar */} 
+      {/* Sidebar */}
       <Sidebar onSelect={setSelectedItem} />
 
       {/* Main Content Area */}

@@ -9,7 +9,7 @@ export function HomePage() {
         <NavBar />
         <Layout >
            <div className="content p-6">
-            <h1 className="text-3xl font-bold mb-4">Main Content</h1>
+            <h1 className="text-3xl font-bold mb-4">Conteudo principal ou inicial</h1>
             <p>
              Clique no menu lateral para começar
             </p>

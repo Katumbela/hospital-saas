@@ -69,7 +69,7 @@ function NavBarContent() {
         </h1>
         <div className="l w-[2px] h-[27px] my-auto bg-white"></div>
         <h2 className="my-auto font-semibold text-white text-md">
-          Your Trusted HealthCare Partner
+          Seu Parceiro Confiável de Saúde
         </h2>
       </div>
       <div className="flex gap-4">
@@ -99,7 +99,7 @@ function NavBarContent() {
           </button>
           {itemClicked === "bell" && (
             <div className="absolute  top-[2.7rem] bg-white z-50 w-[14rem] right-0 p-3 shadow-xl">
-              <b>Notifications</b>
+              <b>Notificações</b>
               <p className="p-1 mt-2 text-xs rounded-sm bg-slate-200">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea,
                 porro perferendis!
@@ -132,13 +132,13 @@ function NavBarContent() {
           {itemClicked === "profile" && (
             <div className="absolute rounded-md bg-white top-[2.7rem] z-50 w-[14rem] right-0 p-3 shadow-xl">
               <p className="py-1.5 px-2 mt-2 flex gap-2 text-sm rounded-sm hover:bg-slate-300 transition-all cursor-pointer bg-slate-200">
-                <FaUserCircle className="my-auto" /> View Profile
+                <FaUserCircle className="my-auto" /> Ver perfil
               </p>
               <p className="py-1.5 px-2 mt-2 flex gap-2 text-sm rounded-sm hover:bg-slate-300 transition-all cursor-pointer bg-slate-200">
-                <FaGear className="my-auto" /> Settings
+                <FaGear className="my-auto" /> Configurações
               </p>
               <p className="py-1.5 px-2 mt-2 flex gap-2 text-sm rounded-sm hover:bg-slate-300 transition-all cursor-pointer bg-slate-200">
-              <FaArrowRightFromBracket className="my-auto" /> Logout
+                <FaArrowRightFromBracket className="my-auto" /> Sair
               </p>
             </div>
           )}

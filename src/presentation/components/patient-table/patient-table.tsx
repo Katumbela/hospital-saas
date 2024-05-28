@@ -21,15 +21,15 @@ interface PatientTableProps {
 
 const getStatusClass = (status: string) => {
   switch (status.toLowerCase()) {
-    case "queue":
+    case "fila":
       return "bg-violett text-white";
-    case "in progress":
-      return "status-in-progress  text-white";
-    case "completed":
+    case "em progresso":
+      return "status-in-progress";
+    case "concluído":
       return "status-completed  text-white";
-    case "cancelled":
+    case "cancelado":
       return "status-cancelled  text-white";
-    case "pending":
+    case "pendente":
       return "bg-gray-300 text-dark";
     default:
       return "";
@@ -90,40 +90,40 @@ export const PatientTable: React.FC<PatientTableProps> = ({
 
   return (
     <div className="">
-      <table className="w-auto text-sm table-fixed text-start text-surface">
+      <table className="w-full text-sm table-auto text-start text-surface">
         <thead className="font-medium border-b border-neutral-200 dark:border-white/10">
           <tr className="bg-violett/10">
             <th scope="col" className="px-2 py-4 w-[2rem]">
-              NO #
+              N°
             </th>
             <th scope="col" className="px-2 text-start w-[10rem] py-2">
-              Patient Details
+              Detalhes do Paciente
             </th>
             <th scope="col" className="px-2 py-2 w-[6rem] text-start">
               DCB
             </th>
             <th scope="col" className="px-2 w-[4.5rem] py-2 text-start">
-              Gender
+              Gênero
             </th>
             <th
               scope="col"
               className="px-2 text-violett w-[6rem] py-2 text-start"
             >
               <span className="flex gap-2">
-                <span>Case</span>
+                <span>Casos</span>
                 <div className="border border-violett rounded-sm p-[2.5px] my-auto">
                   <FaFilter className="text-[8px]" />
                 </div>
               </span>
             </th>
             <th scope="col" className="px-2 w-[8rem] py-2 text-start">
-              Category
+              Categoria
             </th>
-            <th scope="col" className="px-2 w-[6.5rem] py-2 text-start">
-              Referred By
+            <th scope="col" className="px-2 w-[9.5rem] py-2 text-start">
+              Encaminhado Por
             </th>
             <th scope="col" className="px-2 w-[5.5rem] py-2 text-start">
-              Time
+              Hora
             </th>
             <th scope="col" className="px-2 w-[8.5rem] py-2 text-start">
               <span className="flex gap-2">
@@ -134,7 +134,7 @@ export const PatientTable: React.FC<PatientTableProps> = ({
               </span>
             </th>
             <th scope="col" className="w-[15rem] px-2 py-2 text-start">
-              Action
+              Ação
             </th>
           </tr>
         </thead>
@@ -194,11 +194,11 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                     <div className="absolute mt-1 bg-white shadow-lg rounded w-[6.5rem] z-10">
                       <ul>
                         {[
-                          "Queue",
-                          "In Progress",
-                          "Completed",
-                          "Cancelled",
-                          "Pending",
+                          "fila",
+                          "em progresso",
+                          "concluído",
+                          "cancelado",
+                          "pendente",
                         ].map((status) => (
                           <li
                             key={status}
@@ -256,9 +256,10 @@ export const PatientTable: React.FC<PatientTableProps> = ({
       <div className="flex items-center justify-between px-4 mt-4">
         <div className="flex items-center justify-between mb-4">
           <span className="me-4">
-            Showing {indexOfFirstEntry + 1} to{" "}
-            {Math.min(indexOfLastEntry, data.length)} of {data.length} entries{" "}
+            Mostrando {indexOfFirstEntry + 1} a{" "}
+            {Math.min(indexOfLastEntry, data.length)} de {data.length} entradas{" "}
           </span>
+
           <select
             className="px-2 py-2 transition-all rounded-md bg-violett/20 active:bg-violett/70 "
             onChange={handleChangeEntriesPerPage}

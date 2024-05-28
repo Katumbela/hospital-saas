@@ -11,18 +11,19 @@ export function DoctorDashboard({ setSelectedItem }: DRProp) {
       <div className="flex justify-between px-3 py-3">
         <div className="flex gap-4">
           <span className="flex gap-3 my-auto text-sm font-semibold">
-            Today <FaAngleDown className="my-auto" />
+            Hoje <FaAngleDown className="my-auto" />
           </span>
           <div className="px-2 py-1 my-auto text-xs font-semibold text-white transition-all border-2 rounded-full cursor-pointer border-violett bg-violett/90">
-            My Appointments
+            Meus Compromissos
           </div>
           <div className="px-2 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
-            All Appointments
+            Compromissos
           </div>
           <div className="px-2 py-1 my-auto text-xs font-semibold transition-all border-2 rounded-full cursor-pointer hover:shadow-md hover:bg-violett/10 border-violett text-violett">
-            Follow Up
+            Acompanhamento
           </div>
         </div>
+
         <div className="flex gap-5">
           <div className="flex px-2 py-1 my-auto border-2 rounded-md">
             <input
