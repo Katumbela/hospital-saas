@@ -75,7 +75,7 @@ export function Sidebar({ onSelect }: SidebarProps) {
         >
           <div className="text-center">
             <BsReceipt className="mx-auto text-2xl" />
-            <span className="mt-2 text-sm font-semibold">OPD Billing</span>
+            <span className="mt-2 text-sm font-semibold">Faturamento </span>
           </div>
         </li>
         <li

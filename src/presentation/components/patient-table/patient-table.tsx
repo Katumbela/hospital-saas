@@ -238,10 +238,10 @@ export const PatientTable: React.FC<PatientTableProps> = ({
                       <div className="absolute text-dark right-0 top-7 py-2 border  mt-1 bg-white shadow-lg rounded w-[6.5rem] z-50">
                         <ul>
                           <li className="flex gap-2 px-3 hover:bg-slate-100 ">
-                            <FaTrash className="my-auto text-sm " /> Delete
+                            <FaTrash className="my-auto text-sm " /> Apagar
                           </li>
                           <li className="flex gap-2 px-3 my-2 hover:bg-slate-100">
-                            <FaRegEdit className="my-auto text-sm" /> Edit
+                            <FaRegEdit className="my-auto text-sm" /> Editar
                           </li>
                         </ul>
                       </div>
