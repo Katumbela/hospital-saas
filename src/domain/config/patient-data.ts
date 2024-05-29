@@ -94,7 +94,7 @@ export const dummyData: IPatientData[] = [
     days: '35 dias',
     gender: 'Feminino',
     case: 'Consulta',
-    category: 'Gastroenterologia',
+    category: 'Nutrição',
     referredBy: 'Dr. Black',
     time: '12:00',
     status: 'Concluído',
