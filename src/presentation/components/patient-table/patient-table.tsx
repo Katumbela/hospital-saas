@@ -120,7 +120,8 @@ export const PatientTable: React.FC<PatientTableProps> = ({
               Categoria
             </th>
             <th scope="col" className="px-2 w-[9.5rem] py-2 text-start">
-              Encaminhado Por
+              Encaminhado
+              Indicado Por
             </th>
             <th scope="col" className="px-2 w-[5.5rem] py-2 text-start">
               Hora
