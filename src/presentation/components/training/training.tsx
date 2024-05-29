@@ -7,11 +7,11 @@ export function TrainingSection() {
     <>
       <section id="trainings" className="container z-10 2xl:pt-[10rem] pt-[5rem]">
         <center>
-          <h1 className="text-white hacker text-4xl 2xl:text-6xl font-bold">
+          <h1 className="text-4xl font-bold text-white hacker 2xl:text-6xl">
             " Treinamentos em Destaque "
           </h1>
         </center>
-        <div className="grid static z-20 mt-[5rem] grid-cols-3 gap-8">
+        <div className="grid static z-20 mt-[5rem] md:grid-cols-3 sm:grid-cols-2 gap-8">
           {TrainingsData.map((train, index) => (
             <motion.div
               viewport={{ once: true }}
